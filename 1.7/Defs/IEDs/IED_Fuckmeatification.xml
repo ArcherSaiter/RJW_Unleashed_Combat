@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+ <Defs>
+ 
+   <ThingDef ParentName="RJW_U_TrapIEDBase">
+     <defName>RJW_U_TrapIED_Fuckmeatification</defName>
+     <label>IED fuckmeatification trap</label>
+     <description>A pair of fuckmeatification shells connected to a trigger which detonates on touch or bullet impact. It is hidden in the surrounding terrain, but can be placed adjacent to other traps. Animals can sense these when calm.</description>
+     <graphicData>
+       <texPath>Things/Building/Security/RJWUC_IED_Fuckmeatification</texPath>
+     </graphicData>
+     <uiOrder>45</uiOrder>
+     <costList>
+       <RJW_U_ShellFuckmeatification>2</RJW_U_ShellFuckmeatification>
+     </costList>
+     <designationHotKey>Misc10</designationHotKey>
+     <comps>
+       <li Class="CompProperties_Explosive">
+         <explosiveRadius>9.9</explosiveRadius>
+         <explosiveDamageType>RJW_U_FuckmeatificationShell</explosiveDamageType>
+         <startWickHitPointsPercent>0.2</startWickHitPointsPercent>
+         <applyDamageToExplosionCellsNeighbors>true</applyDamageToExplosionCellsNeighbors>
+         <explosionEffect>ExtinguisherExplosion</explosionEffect>
+         <wickTicks>15</wickTicks>
+         <startWickOnDamageTaken>
+           <li>Bullet</li>
+           <li>Arrow</li>
+           <li>ArrowHighVelocity</li>
+         </startWickOnDamageTaken>
+       </li>
+     </comps>
+     <specialDisplayRadius>9.9</specialDisplayRadius>
+   </ThingDef>
+ 
+ </Defs>

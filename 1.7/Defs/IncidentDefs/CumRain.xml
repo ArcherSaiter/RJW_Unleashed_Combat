@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <IncidentDef>
+    <defName>RJWUC_CumRain</defName>
+    <label>Cum rain</label>
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>RimWorld.IncidentWorker_MakeGameCondition</workerClass>
+    <gameCondition>RJWUC_CumRain</gameCondition>
+    <letterLabel>Cum rain</letterLabel>
+    <letterDef>NeutralEvent</letterDef>
+    <baseChance>0.3</baseChance>
+    <minRefireDays>14</minRefireDays>
+    <durationDays>0.5~2.0</durationDays>
+  </IncidentDef>
+
+</Defs>

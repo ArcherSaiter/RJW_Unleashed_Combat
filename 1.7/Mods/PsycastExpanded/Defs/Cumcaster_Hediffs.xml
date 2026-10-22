@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <HediffDef>
+    <defName>RJW_VPE_CumCatalyst</defName>
+    <label>cum catalyst</label>
+    <description>Psychic sensitivity is amplified by the seed absorbed through the cum catalyst psycast.</description>
+    <hediffClass>RJW_Unleashed_VPE.Hediff_CumCatalyst</hediffClass>
+    <isBad>false</isBad>
+    <stages>
+      <li>
+        <becomeVisible>true</becomeVisible>
+      </li>
+    </stages>
+    <comps>
+      <li Class="VanillaPsycastsExpanded.HediffCompProperties_SpawnMote">
+        <moteDef>RJW_VPE_CumBall</moteDef>
+      </li>
+      <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>false</showRemainingTime>
+        <disappearsAfterTicks>5000</disappearsAfterTicks>
+      </li>
+      <li Class="HediffCompProperties_DisappearsOnDeath" />
+      <li Class="VanillaPsycastsExpanded.HediffCompProperties_DisappearsOnDowned" />
+      <li Class="VanillaPsycastsExpanded.HediffCompProperties_DisappearsOnDespawn" />
+    </comps>
+  </HediffDef>
+</Defs>

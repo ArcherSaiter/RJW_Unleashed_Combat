@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <ThingDef ParentName="RJW_U_GeneticShellBase">
+    <defName>RJW_U_ShellFurryfication</defName>
+    <label>furryfication shell</label>
+    <description>A pressurized shell that bursts on impact, changing genes of nearby humanlikes. Can be fired from mortars or installed as a trap. Explodes when damaged.</description>
+    <graphicData>
+      <texPath>Things/Ammo/RJW_U_MortarShell</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+	  <color>(139, 90, 43, 180)</color>
+    </graphicData>
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <explosiveDamageType>RJW_U_FurryficationShell</explosiveDamageType>
+      </li>
+    </comps>
+    <projectileWhenLoaded>RJW_U_BulletShellFurryfication</projectileWhenLoaded>
+    <costList>
+      <Steel>25</Steel>
+	  <UF_Solution>4</UF_Solution>
+    </costList>
+  </ThingDef>
+
+  <ThingDef ParentName="RJW_Bullet_Base">
+    <defName>RJW_U_BulletShellFurryfication</defName>
+    <label>furryfication shell</label>
+    <graphicData>
+      <texPath>Things/Projectile/ShellFirefoam</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+	  <color>(139, 90, 43, 180)</color>
+    </graphicData>
+    <projectile>
+      <damageDef>RJW_U_FurryficationShell</damageDef>
+    </projectile>
+  </ThingDef>
+
+  <DamageDef ParentName="RJW_U_DamageBase">
+    <defName>RJW_U_FurryficationShell</defName>
+    <label>furryfication shell explosion</label>
+    <modExtensions>
+      <li Class="RJW_Unleashed_Combat.GeneModifierExtension">
+        <genderRelativityType>2</genderRelativityType>
+        <asXenogene>true</asXenogene>
+        <maleGeneset></maleGeneset>
+        <femaleGeneset></femaleGeneset>
+        <uniGeneset>
+		    <li>AnimalWarcall</li>
+			<li>Immunity_Strong</li>
+			<li>WoundHealing_Fast</li>
+			<li>Superclotting</li>
+			<li>MoveSpeed_Quick</li>
+			<li>NakedSpeed</li>
+			<li>MaxTemp_SmallDecrease</li>
+			<li>FireTerror</li>
+			<li>Aggression_Aggressive</li>
+			<li>MeleeDamage_Strong</li>
+			<li MayRequire="vegapnk.rjw.genes">rjw_genes_rapist</li>
+			<li>Ears_Pointed</li>
+			<li>Body_Hulk</li>
+			<li>Skin_LightGray</li>
+			<li>StrongStomach</li>
+			<li>RobustDigestion</li>
+			<li>Learning_Slow</li>
+			<li>DarkVision</li>
+			<li>ElongatedFingers</li>
+			<li>Furskin</li>
+			<li>Tail_Furry</li>
+			<li>AptitudeTerrible_Shooting</li>
+			<li>AptitudeRemarkable_Melee</li>
+			<li>AptitudePoor_Construction</li>
+			<li>AptitudeStrong_Mining</li>
+			<li>AptitudeTerrible_Cooking</li>
+			<li>AptitudeStrong_Plants</li>
+			<li>AptitudeStrong_Animals</li>
+			<li>AptitudeTerrible_Crafting</li>
+			<li>AptitudeTerrible_Artistic</li>
+			<li>AptitudeTerrible_Medicine</li>
+			<li>AptitudePoor_Social</li>
+			<li>AptitudeTerrible_Intellectual</li>
+			<li>AptitudeRemarkable_Sex</li>
+			<li MayRequire="vegapnk.rjw.genes">rjw_genes_size_blinded</li>
+			<li MayRequire="vegapnk.rjw.genes">rjw_genes_equine_genitalia</li>
+			<li MayRequire="vegapnk.rjw.genes">rjw_genes_canine_genitalia</li>
+			<li MayRequire="vegapnk.rjw.genes">rjw_genes_feline_genitalia</li>
+			<li MayRequire="vegapnk.rjw.genes">rjw_genes_big_male_genitalia</li>
+			<li MayRequire="vegapnk.rjw.genes">rjw_genes_loose_female_genitalia</li>
+			<li MayRequire="vegapnk.rjw.genes">rjw_genes_big_breasts</li>
+			<li MayRequire="vegapnk.rjw.genes">rjw_genes_loose_anus</li>
+			<li MayRequire="vegapnk.rjw.genes">rjw_genes_zoophile</li>
+			<li MayRequire="vegapnk.rjw.genes">rjw_genes_mating_call</li>
+			<li MayRequire="vegapnk.rjw.genes">rjw_genes_pheromone_spit</li>
+			<li MayRequire="vegapnk.rjw.genes">rjw_genes_very_much_fluid</li>
+			<li MayRequire="vegapnk.rjw.genes">rjw_genes_unbreakable</li>
+			<li MayRequire="vegapnk.rjw.genes">rjw_genes_orgasm_rush</li>
+			<li MayRequire="vegapnk.rjw.genes">rjw_genes_sex_tamer</li>
+			<li MayRequire="archersaiter.rjw.traits">RJW_Traits_Insatiable_Gene</li>
+			<li>ChemicalDependency_GoJuice</li>
+		</uniGeneset>
+      </li>
+    </modExtensions>
+  </DamageDef>
+
+</Defs>

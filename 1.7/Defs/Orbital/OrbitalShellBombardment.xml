@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="OrbitalUtilityBase">
+    <defName>RJW_U_OrbitalBombardmentPointer</defName>
+    <label>orbital shell bombardment pointer</label>
+    <description>A hijacked orbital targeting unit. Once aimed at a location, it signals an automated weapons platform to begin dropping a spread of experimental shells across the target area. The platform has no idea what those shells actually do, and will keep dropping them for a while before it flags the unauthorized request and burns out the unit.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponSpecial/RJW_U_OrbitalBombardmentPointer/RJW_U_OrbitalBombardmentPointer</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(0.7,0.7)</drawSize>
+    </graphicData>
+    <thingSetMakerTags>
+      <li>RewardStandardHighFreq</li>
+    </thingSetMakerTags>
+    <apparel>
+      <ai_pickUpOpportunistically>true</ai_pickUpOpportunistically>
+      <wornGraphicPath>Things/Item/Equipment/WeaponSpecial/RJW_U_OrbitalBombardmentPointer/RJW_U_OrbitalBombardmentPointer</wornGraphicPath>
+      <wornGraphicData>
+        <renderUtilityAsPack>true</renderUtilityAsPack>
+        <north>
+          <male>  <offset>(0.25, -0.25)</offset> </male>
+          <female><offset>(0.25,-0.25)</offset> </female>
+          <thin>  <offset>(0.15,-0.25)</offset> </thin>
+          <hulk>  <offset>(0.25,-0.3)</offset> </hulk>
+          <fat>   <offset>(0.45,-0.25)</offset> </fat>
+        </north>
+        <south>
+          <male>  <offset>(-0.3, -0.25)</offset> </male>
+          <female><offset>(-0.3,-0.25)</offset> </female>
+          <thin>  <offset>(-0.2,-0.25)</offset> </thin>
+          <hulk>  <offset>(-0.3,-0.3)</offset> </hulk>
+          <fat>   <offset>(-0.5,-0.25)</offset> </fat>
+        </south>
+        <east>
+          <offset>(-0.05,-0.3)</offset>
+        </east>
+
+        <male>  <scale>(0.4,0.4)</scale> </male>
+        <female><scale>(0.4,0.4)</scale> </female>
+        <thin>  <scale>(0.4,0.4)</scale> </thin>
+        <hulk>  <scale>(0.4,0.4)</scale> </hulk>
+        <fat>   <scale>(0.4,0.4)</scale> </fat>
+      </wornGraphicData>
+    </apparel>
+    <verbs>
+      <li Class="RJW_Unleashed_Combat.VerbProperties_ShellBombardment">
+        <verbClass>RJW_Unleashed_Combat.Verb_CastShellBombardment</verbClass>
+        <strikeDef>RJW_U_OrbitalShellBombardment</strikeDef>
+        <impactAreaRadius>15</impactAreaRadius>
+        <bombIntervalTicks>30</bombIntervalTicks>
+        <explosionCount>30</explosionCount>
+        <warmupTicks>60</warmupTicks>
+        <hasStandardCommand>true</hasStandardCommand>
+        <useableInPocketMaps>false</useableInPocketMaps>
+        <warmupTime>3</warmupTime>
+        <ai_AvoidFriendlyFireRadius>23</ai_AvoidFriendlyFireRadius>
+        <ai_IsBuildingDestroyer>false</ai_IsBuildingDestroyer>
+        <range>44.9</range>
+        <burstShotCount>1</burstShotCount>
+        <soundAiming>OrbitalTargeter_Aiming</soundAiming>
+        <soundCast>OrbitalTargeter_Fire</soundCast>
+        <onlyManualCast>true</onlyManualCast>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+      </li>
+    </verbs>
+    <comps>
+      <li Class="CompProperties_ApparelReloadable">
+        <maxCharges>1</maxCharges>
+        <destroyOnEmpty>true</destroyOnEmpty>
+        <hotKey>Misc4</hotKey>
+        <chargeNoun>charge</chargeNoun>
+        <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="OrbitalStrikeBase">
+    <defName>RJW_U_OrbitalShellBombardment</defName>
+    <label>orbital shell bombardment</label>
+    <thingClass>RJW_Unleashed_Combat.OrbitalShellBombardment</thingClass>
+    <comps>
+      <li Class="CompProperties_OrbitalBeam">
+        <width>0.2</width>
+        <color>(255, 105, 180, 242)</color>
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>

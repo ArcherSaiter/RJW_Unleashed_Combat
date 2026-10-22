@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <!-- 1. Lust Spike -->
+  <VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+    <defName>RJW_VPE_LustSpike</defName>
+    <label>lust spike</label>
+    <description>Condenses casters lewd thoughts into a psychic lancing bolt of pure lust, slamming into a target and igniting their desire.</description>
+    <iconPath>Abilities/Lustshaper/LustSpike</iconPath>
+    <abilityClass>RJW_Unleashed_VPE.Ability_LustSpike</abilityClass>
+    <castTime>30</castTime>
+    <range>19.9</range>
+    <targetMode>Pawn</targetMode>
+    <castSound>VPE_IceSpike_Cast</castSound>
+    <targetingParameters>
+      <canTargetPawns>true</canTargetPawns>
+      <canTargetBuildings>false</canTargetBuildings>
+    </targetingParameters>
+    <power>0.05</power>
+    <powerStatFactors>
+      <PsychicSensitivity>0.5</PsychicSensitivity>
+    </powerStatFactors>
+    <modExtensions>
+      <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+        <path>RJW_Lustshaper</path>
+        <level>1</level>
+        <order>1</order>
+        <psyfocusCost>0.02</psyfocusCost>
+        <entropyGain>12</entropyGain>
+      </li>
+      <li Class="VEF.Abilities.AbilityExtension_Projectile">
+        <projectile>RJW_VPE_LustSpike</projectile>
+      </li>
+      <li Class="VEF.Abilities.AbilityExtension_Hediff">
+        <hediff>RJW_VPE_LustSpike</hediff>
+      </li>
+    </modExtensions>
+  </VEF.Abilities.AbilityDef>
+
+  <!-- 2. Pheromone Breath -->
+  <VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+    <defName>RJW_VPE_PheromoneBreath</defName>
+    <label>pheromone breath</label>
+    <description>Exhale a cloud of pheromones that rapidly inflame lust of all caught in its path.</description>
+    <iconPath>Abilities/Lustshaper/PheromoneBreath</iconPath>
+    <abilityClass>RJW_Unleashed_VPE.Ability_LustRay</abilityClass>
+    <castTime>60</castTime>
+    <range>9.9</range>
+    <targetMode>Location</targetMode>
+    <castSound>VPE_BreatheFlame_Cast</castSound>
+    <targetingParameters>
+      <canTargetLocations>true</canTargetLocations>
+      <canTargetPawns>true</canTargetPawns>
+      <canTargetBuildings>false</canTargetBuildings>
+    </targetingParameters>
+	<powerStatFactors>
+      <PsychicSensitivity>0.5</PsychicSensitivity>
+    </powerStatFactors>
+    <modExtensions>
+      <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+        <path>RJW_Lustshaper</path>
+        <level>1</level>
+        <order>2</order>
+        <psyfocusCost>0.05</psyfocusCost>
+        <entropyGain>26</entropyGain>
+      </li>
+      <li Class="VEF.Abilities.AbilityExtension_Projectile">
+        <projectile>RJW_VPE_PheromoneBreath</projectile>
+      </li>
+    </modExtensions>
+  </VEF.Abilities.AbilityDef>
+
+  <!-- 3. Lust Shield -->
+  <VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+    <defName>RJW_VPE_LustShield</defName>
+    <label>lust shield</label>
+    <description>Enfold a target in a field of projected lust that can shield them from external lust manipulation. Due to the nature of this field, it also forces psychic desire upon any melee attackers trying to breach through it.</description>
+    <iconPath>Abilities/Lustshaper/LustShield</iconPath>
+    <abilityClass>VEF.Abilities.Ability_Blank</abilityClass>
+    <castTime>30</castTime>
+    <range>9.9</range>
+    <targetMode>Pawn</targetMode>
+    <castSound>VPE_IceShield_Cast</castSound>
+    <targetingParameters>
+      <canTargetPawns>true</canTargetPawns>
+      <canTargetBuildings>false</canTargetBuildings>
+      <canTargetSelf>true</canTargetSelf>
+    </targetingParameters>
+    <durationTime>600</durationTime>
+	<durationTimeStatFactors>
+      <PsychicSensitivity>0.5</PsychicSensitivity>
+    </durationTimeStatFactors>
+    <showUndrafted>true</showUndrafted>
+    <modExtensions>
+      <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+        <path>RJW_Lustshaper</path>
+        <level>2</level>
+        <order>2</order>
+        <psyfocusCost>0.05</psyfocusCost>
+        <entropyGain>25</entropyGain>
+		<prerequisites>
+          <li>RJW_VPE_LustSpike</li>
+		  <li>RJW_VPE_PheromoneBreath</li>
+        </prerequisites>
+      </li>
+      <li Class="VEF.Abilities.AbilityExtension_Hediff">
+        <hediff>RJW_VPE_LustShield</hediff>
+      </li>
+    </modExtensions>
+  </VEF.Abilities.AbilityDef>
+
+  <!-- 4. Ray of Desire -->
+  <VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+    <defName>RJW_VPE_RayOfDesire</defName>
+    <label>ray of desire</label>
+    <description>Channel a piercing beam of concentrated desire along the path ahead, kindling lust in all it passes through.</description>
+    <iconPath>Abilities/Lustshaper/RayOfDesire</iconPath>
+    <abilityClass>RJW_Unleashed_VPE.Ability_LustRay</abilityClass>
+    <durationTime>240</durationTime>
+    <durationTimeStatFactors>
+      <PsychicSensitivity>0.5</PsychicSensitivity>
+    </durationTimeStatFactors>
+    <castTime>30</castTime>
+    <range>12.9</range>
+    <targetMode>Location</targetMode>
+    <castSound>VPE_EyeBlast_Cast</castSound>
+    <targetingParameters>
+      <canTargetLocations>true</canTargetLocations>
+      <canTargetPawns>true</canTargetPawns>
+      <canTargetBuildings>false</canTargetBuildings>
+    </targetingParameters>
+    <powerStatFactors>
+      <PsychicSensitivity>0.5</PsychicSensitivity>
+    </powerStatFactors>
+	<power>0.20</power>
+    <modExtensions>
+      <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+        <path>RJW_Lustshaper</path>
+        <level>2</level>
+        <order>1</order>
+        <psyfocusCost>0.05</psyfocusCost>
+        <entropyGain>30</entropyGain>
+		<prerequisites>
+          <li>RJW_VPE_LustSpike</li>
+        </prerequisites>
+      </li>
+      <li Class="VEF.Abilities.AbilityExtension_Projectile">
+        <projectile>RJW_VPE_LustRay</projectile>
+      </li>
+      <li Class="VEF.Abilities.AbilityExtension_Hediff">
+        <hediff>RJW_VPE_RayOfDesire</hediff>
+      </li>
+    </modExtensions>
+  </VEF.Abilities.AbilityDef>
+
+  <!-- 5. Pheromonous Crystal -->
+  <VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+    <defName>RJW_VPE_PheromoneCrystal</defName>
+    <label>pheromonous crystal</label>
+    <description>Manifest a temporary crystal of concentrated pheromones that instill lewd thoughts in anyone passig by.</description>
+    <iconPath>Abilities/Lustshaper/PheromoneCrystal</iconPath>
+    <abilityClass>VEF.Abilities.Ability_SpawnBuilding</abilityClass>
+    <castTime>30</castTime>
+    <range>9.9</range>
+    <targetMode>Location</targetMode>
+    <castSound>VPE_IceCrystal_Cast</castSound>
+    <targetingParameters>
+      <canTargetLocations>true</canTargetLocations>
+      <canTargetBuildings>false</canTargetBuildings>
+    </targetingParameters>
+    <durationTime>60000</durationTime>
+	<powerStatFactors>
+      <PsychicSensitivity>0.5</PsychicSensitivity>
+    </powerStatFactors>
+	<durationTimeStatFactors>
+      <PsychicSensitivity>0.25</PsychicSensitivity>
+    </durationTimeStatFactors>
+    <showUndrafted>true</showUndrafted>
+    <modExtensions>
+      <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+        <path>RJW_Lustshaper</path>
+        <level>2</level>
+        <order>3</order>
+        <psyfocusCost>0.10</psyfocusCost>
+        <entropyGain>30</entropyGain>
+		<prerequisites>
+          <li>RJW_VPE_PheromoneBreath</li>
+        </prerequisites>
+      </li>
+      <li Class="VEF.Abilities.AbilityExtension_Building">
+        <building>RJW_VPE_PheromoneCrystal</building>
+      </li>
+    </modExtensions>
+  </VEF.Abilities.AbilityDef>
+
+  <!-- 6. Release Desire -->
+  <VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+    <defName>RJW_VPE_ReleaseDesire</defName>
+    <label>release desire</label>
+    <description>Unleash a wave of psychic energy centered on the caster, inflaming overwhelming lust in beings caught in the blast.</description>
+    <iconPath>Abilities/Lustshaper/ReleaseDesire</iconPath>
+    <abilityClass>RJW_Unleashed_VPE.Ability_LustPulse</abilityClass>
+    <castTime>30</castTime>
+    <range>0</range>
+    <targetMode>Self</targetMode>
+    <castSound>VPE_SelfExplosion_Cast</castSound>
+    <targetingParameters>
+      <canTargetSelf>true</canTargetSelf>
+    </targetingParameters>
+    <radius>8.9</radius>
+    <power>0.35</power>
+    <powerStatFactors>
+      <PsychicSensitivity>0.5</PsychicSensitivity>
+    </powerStatFactors>
+	<radiusStatFactors>
+      <PsychicSensitivity>0.5</PsychicSensitivity>
+    </radiusStatFactors>
+    <modExtensions>
+      <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+        <path>RJW_Lustshaper</path>
+        <level>3</level>
+        <order>1</order>
+        <psyfocusCost>0.20</psyfocusCost>
+        <entropyGain>60</entropyGain>
+        <prerequisites>
+          <li>RJW_VPE_LustShield</li>
+          <li>RJW_VPE_RayOfDesire</li>
+        </prerequisites>
+      </li>
+    </modExtensions>
+  </VEF.Abilities.AbilityDef>
+
+  <!-- 7. Passion Surge -->
+  <VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+    <defName>RJW_VPE_PassionSurge</defName>
+    <label>passion surge</label>
+    <description>Let loose a sudden surge of psychic desire at a target location, drowning all nearby in an overwhelming flood of lust.</description>
+    <iconPath>Abilities/Lustshaper/PassionSurge</iconPath>
+    <abilityClass>RJW_Unleashed_VPE.Ability_LustPulse</abilityClass>
+    <castTime>60</castTime>
+    <range>24.9</range>
+    <targetMode>Location</targetMode>
+    <castSound>VPE_Explosion</castSound>
+    <targetingParameters>
+      <canTargetLocations>true</canTargetLocations>
+    </targetingParameters>
+    <radius>4.9</radius>
+    <power>0.35</power>
+    <powerStatFactors>
+      <PsychicSensitivity>0.5</PsychicSensitivity>
+    </powerStatFactors>
+    <!--<radiusStatFactors>
+      <PsychicSensitivity>0.5</PsychicSensitivity>
+    </radiusStatFactors>-->
+    <modExtensions>
+      <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+        <path>RJW_Lustshaper</path>
+        <level>3</level>
+        <order>2</order>
+        <psyfocusCost>0.20</psyfocusCost>
+        <entropyGain>60</entropyGain>
+        <prerequisites>
+          <li>RJW_VPE_LustShield</li>
+          <li>RJW_VPE_PheromoneCrystal</li>
+        </prerequisites>
+      </li>
+    </modExtensions>
+  </VEF.Abilities.AbilityDef>
+
+  <!-- 8. Lust Cyclon -->
+  <VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+    <defName>RJW_VPE_LustCyclon</defName>
+    <label>lust cyclon</label>
+    <description>Create a roaring vortex of manifested lust, rapidly making anyone in its way hopelessly horny.</description>
+    <iconPath>Abilities/Lustshaper/LustCyclon</iconPath>
+    <abilityClass>RJW_Unleashed_VPE.Ability_LustCyclon</abilityClass>
+    <castTime>60</castTime>
+    <range>30.0</range>
+    <targetMode>Location</targetMode>
+    <castSound>VPE_FireTornado_Cast</castSound>
+    <targetingParameters>
+      <canTargetLocations>true</canTargetLocations>
+    </targetingParameters>
+    <radius>4.9</radius>
+    <power>0.10</power>
+    <durationTime>1800</durationTime>
+    <durationTimeStatFactors>
+      <PsychicSensitivity>0.5</PsychicSensitivity>
+    </durationTimeStatFactors>
+    <powerStatFactors>
+      <PsychicSensitivity>0.5</PsychicSensitivity>
+    </powerStatFactors>
+    <modExtensions>
+      <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+        <path>RJW_Lustshaper</path>
+        <level>4</level>
+        <order>1</order>
+        <psyfocusCost>0.40</psyfocusCost>
+        <entropyGain>150</entropyGain>
+        <prerequisites>
+          <li>RJW_VPE_ReleaseDesire</li>
+          <li>RJW_VPE_PassionSurge</li>
+        </prerequisites>
+      </li>
+    </modExtensions>
+  </VEF.Abilities.AbilityDef>
+
+  <!-- 9. Lust Storm -->
+  <VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+    <defName>RJW_VPE_LustStorm</defName>
+    <label>lust storm</label>
+    <description>Unleash a titanic psychic storm of manifested lust around the caster, ceaselessly forcing lewd thoughts and sexual urges into minds across the surrounding area for its duration.</description>
+    <iconPath>Abilities/Lustshaper/LustStorm</iconPath>
+    <abilityClass>VEF.Abilities.Ability_Blank</abilityClass>
+    <castTime>120</castTime>
+    <range>0</range>
+    <targetMode>Self</targetMode>
+	<goodwillImpact>-50</goodwillImpact>
+	<warmupStartSound>Psycast_Neuroquake_CastStart</warmupStartSound>
+    <warmupSound>Psycast_Neuroquake_CastLoop</warmupSound>
+    <warmupPreEndSound>Psycast_Neuroquake_CastEnd</warmupPreEndSound>
+    <targetingParameters>
+      <canTargetSelf>true</canTargetSelf>
+    </targetingParameters>
+    <radius>15</radius>
+    <power>0.10</power>
+    <durationTime>1250</durationTime>
+    <powerStatFactors>
+      <PsychicSensitivity>0.5</PsychicSensitivity>
+    </powerStatFactors>
+	<durationTimeStatFactors>
+      <PsychicSensitivity>0.5</PsychicSensitivity>
+    </durationTimeStatFactors>
+	<radiusStatFactors>
+      <PsychicSensitivity>0.5</PsychicSensitivity>
+    </radiusStatFactors>
+    <showUndrafted>false</showUndrafted>
+    <modExtensions>
+      <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+        <path>RJW_Lustshaper</path>
+        <level>5</level>
+        <order>1</order>
+        <psyfocusCost>0.80</psyfocusCost>
+        <entropyGain>300</entropyGain>
+        <prerequisites>
+          <li>RJW_VPE_LustCyclon</li>
+        </prerequisites>
+      </li>
+      <li Class="VEF.Abilities.AbilityExtension_Hediff">
+        <hediff>RJW_VPE_LustStormSource</hediff>
+        <applyToCaster>true</applyToCaster>
+		<durationMultiplier>PsychicSensitivity</durationMultiplier>
+      </li>
+    </modExtensions>
+  </VEF.Abilities.AbilityDef>
+</Defs>

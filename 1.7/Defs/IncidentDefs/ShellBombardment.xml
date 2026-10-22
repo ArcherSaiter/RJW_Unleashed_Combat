@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <IncidentDef>
+    <defName>RJW_U_OrbitalShellBombardment</defName>
+    <label>orbital shell bombardment</label>
+    <category>ThreatSmall</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>RJW_Unleashed_Combat.IncidentWorker_ShellBombardment</workerClass>
+    <baseChance>1.0</baseChance>
+    <minRefireDays>7</minRefireDays>
+    <letterLabel>Orbital shell bombardment</letterLabel>
+    <letterText>An orbital platform has begun dropping a spread of experimental shells across this region. They seem rather unusual, and effects may be life-changing.</letterText>
+    <letterDef>ThreatSmall</letterDef>
+  </IncidentDef>
+
+</Defs>

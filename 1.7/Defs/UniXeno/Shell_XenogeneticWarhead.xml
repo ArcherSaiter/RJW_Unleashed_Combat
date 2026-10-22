@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>RJW_U_XenogeneticWarhead</defName>
+    <label>xenogenetic warhead</label>
+    <description>A pressurized shell that bursts on impact, covering the area in xenogenetic compound that rapidly changes the genetic code of victims. Can be fired from mortars or installed as a trap. Explodes when damaged.</description>
+    <graphicData>
+      <texPath>Things/Ammo/RJW_U_MortarShell</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <color>(144, 238, 144, 180)</color>
+    </graphicData>
+	<thingClass>RJW_Unleashed_Combat.XenogeneticWarhead</thingClass>
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>9.9</explosiveRadius>
+        <explosiveDamageType>XenogeneticWarhead</explosiveDamageType>
+        <explosiveExpandPerStackcount>0.4</explosiveExpandPerStackcount>
+        <startWickHitPointsPercent>0.7</startWickHitPointsPercent>
+        <applyDamageToExplosionCellsNeighbors>true</applyDamageToExplosionCellsNeighbors>
+        <explosionEffect>ExtinguisherExplosion</explosionEffect>
+        <wickTicks>30~60</wickTicks>
+      </li>
+	  <li Class="RJW_Unleashed_Combat.CompProperties_GeneCarrier"/>
+    </comps>
+    <projectileWhenLoaded>RJW_U_Bullet_XenogeneticWarhead</projectileWhenLoaded>
+	<soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <tickerType>Normal</tickerType>
+    <stackLimit>1</stackLimit>
+    <techLevel>Industrial</techLevel>
+    <statBases>
+      <MaxHitPoints>50</MaxHitPoints>
+      <MarketValue>75</MarketValue>
+      <Mass>1</Mass>
+      <Flammability>1.0</Flammability>
+      <DeteriorationRate>2</DeteriorationRate>
+    </statBases>
+    <thingCategories>
+      <li>MortarShells</li>
+    </thingCategories>
+    <tradeTags>
+      <li>MortarShell</li>
+    </tradeTags>
+	<inspectorTabs>
+      <li>ITab_Genes</li>
+    </inspectorTabs>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>RJW_U_Bullet_XenogeneticWarhead</defName>
+    <label>xenogenetic warhead</label>
+    <graphicData>
+      <texPath>Things/Projectile/ShellFirefoam</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+      <color>(144, 238, 144, 180)</color>
+    </graphicData>
+    <thingClass>RJW_Unleashed_Combat.Projectile_XenogeneticWarhead</thingClass>
+    <projectile>
+      <damageDef>XenogeneticWarhead</damageDef>
+      <speed>41</speed>
+      <explosionRadius>5</explosionRadius>
+      <flyOverhead>true</flyOverhead>
+      <soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+      <soundExplode>Explosion_EMP</soundExplode>
+      <soundImpactAnticipate>MortarRound_PreImpact</soundImpactAnticipate>
+      <soundAmbient>MortarRound_Ambient</soundAmbient>
+      <applyDamageToExplosionCellsNeighbors>true</applyDamageToExplosionCellsNeighbors>
+      <explosionEffect>ExtinguisherExplosion</explosionEffect>
+    </projectile>
+  </ThingDef>
+
+  <DamageDef ParentName="Bomb">
+    <defName>XenogeneticWarhead</defName>
+    <label>xenogenetic warhead shell explosion</label>
+    <workerClass>RJW_Unleashed_Combat.UnigeneticDamageWorker</workerClass>
+    <canInterruptJobs>false</canInterruptJobs>
+    <makesBlood>false</makesBlood>
+    <defaultDamage>1</defaultDamage>
+    <explosionCellFleck>BlastExtinguisher</explosionCellFleck>
+    <explosionColorEdge>(1, 1, 1, 0.05)</explosionColorEdge>
+    <soundExplosion>Explosion_Stun</soundExplosion>
+    <harmsHealth>false</harmsHealth>
+    <combatLogRules>Damage_Extinguish</combatLogRules>
+    <consideredHelpful>false</consideredHelpful>
+  </DamageDef>
+
+   <RecipeDef ParentName="RJW_U_GeneticCapsuleBaseRecipe">
+     <defName>RJW_U_XenogeneticWarheadRecipe</defName>
+     <label>Make xenogenetic warhead</label>
+     <description>Craft a xenogenetic warhead filled with genetic material.</description>
+     <jobString>Making xenogenetic warhead.</jobString>
+	 <workerClass>RJW_Unleashed_Combat.CraftWarhead</workerClass>
+     <ingredients>
+		 <li>
+           <filter>
+             <thingDefs>
+               <li>RJW_U_GeneticCapsule</li>
+             </thingDefs>
+           </filter>
+           <count>1</count>
+         </li>
+		 <li>
+           <filter>
+             <thingDefs>
+               <li>Steel</li>
+             </thingDefs>
+           </filter>
+           <count>25</count>
+         </li>
+      </ingredients>
+   </RecipeDef>
+
+</Defs>

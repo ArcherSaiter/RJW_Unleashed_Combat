@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <JobDef>
+    <defName>RJWUC_CleanThickCumSelf</defName>
+    <driverClass>RJW_Unleashed_Combat.JobDriver_CleanThickCumSelf</driverClass>
+    <reportString>cleaning up.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+
+</Defs>

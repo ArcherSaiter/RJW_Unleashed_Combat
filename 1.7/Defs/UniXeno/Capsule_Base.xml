@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+   <ThingDef Abstract="True" Name="RJW_U_GeneticCapsuleBase">
+     <defName>RJW_U_GeneticCapsuleBase</defName>
+     <category>Item</category>
+     <thingClass>ThingWithComps</thingClass>
+     <statBases>
+       <MarketValue>50</MarketValue>
+       <Mass>1</Mass>
+       <Flammability>0.2</Flammability>
+     </statBases>
+	 <thingCategories>
+      <li>ItemsMisc</li>
+     </thingCategories>
+	 <category>Item</category>
+     <drawerType>MapMeshOnly</drawerType>
+	 <selectable>true</selectable>
+     <altitudeLayer>Item</altitudeLayer>
+     <alwaysHaulable>true</alwaysHaulable>
+     <rotatable>false</rotatable>
+     <healthAffectsPrice>false</healthAffectsPrice>
+     <pathCost>14</pathCost>
+     <comps>
+       <li Class="CompProperties_Forbiddable"/>
+     </comps>
+   </ThingDef>
+
+   <RecipeDef Abstract="True" Name="RJW_U_GeneticCapsuleBaseRecipe">
+     <defName>RJW_U_GeneticCapsuleBaseRecipe</defName>
+     <workAmount>400</workAmount>
+     <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+     <effectWorking>Cook</effectWorking>
+     <soundWorking>Recipe_Machining</soundWorking>
+     <recipeUsers>
+       <li>FabricationBench</li>
+	   <li>TableMachining</li>
+     </recipeUsers>
+     <skillRequirements>
+       <Crafting>6</Crafting>
+     </skillRequirements>
+     <workSkill>Crafting</workSkill>
+   </RecipeDef>
+
+</Defs>

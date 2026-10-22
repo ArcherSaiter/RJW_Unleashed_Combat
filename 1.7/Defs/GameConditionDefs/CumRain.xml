@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <GameConditionDef>
+    <defName>RJWUC_CumRain</defName>
+    <conditionClass>GameCondition_ForceWeather</conditionClass>
+    <weatherDef>RJWUC_CumRain</weatherDef>
+    <label>Cum rain</label>
+    <description>A bizarre weather - it is raining cum down on this region. Outdoor terrain and items are being coated in it.</description>
+    <endMessage>The cum rain is letting up.</endMessage>
+    <letterText>Perhaps caused by a massive leak at high-altitude vessel or by strange psyonics and archotech wims, cum is raining out of the sky and pooling outdoors. Your people will want to stay under a roof - and cleaning up afterwards is going to be a real chore.</letterText>
+    <letterDef>NeutralEvent</letterDef>
+    <natural>false</natural>
+    <allowUnderground>false</allowUnderground>
+    <canAffectAllPlanetLayers>false</canAffectAllPlanetLayers>
+  </GameConditionDef>
+
+</Defs>

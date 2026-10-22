@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+   
+  <ThingDef ParentName="RJW_U_GeneticShellBase">
+    <defName>RJW_U_ShellFuckmeatification</defName>
+    <label>fuckmeatification shell</label>
+    <description>A pressurized shell that bursts on impact, changing genes of nearby humanlikes. Can be fired from mortars or installed as a trap. Explodes when damaged.</description>
+    <graphicData>
+      <texPath>Things/Ammo/RJW_U_MortarShell</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+  	<color>(230, 200, 160, 180)</color>
+    </graphicData>
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <explosiveDamageType>RJW_U_FuckmeatificationShell</explosiveDamageType>
+      </li>
+    </comps>
+    <projectileWhenLoaded>RJW_U_BulletShellFuckmeatification</projectileWhenLoaded>
+    <costList>
+      <Steel>25</Steel>
+  	<UF_Solution>4</UF_Solution>
+    </costList>
+  </ThingDef>
+ 
+  <ThingDef ParentName="RJW_Bullet_Base">
+    <defName>RJW_U_BulletShellFuckmeatification</defName>
+    <label>fuckmeatification shell</label>
+    <graphicData>
+      <texPath>Things/Projectile/ShellFirefoam</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+  	<color>(230, 200, 160, 180)</color>
+    </graphicData>
+    <projectile>
+      <damageDef>RJW_U_FuckmeatificationShell</damageDef>
+    </projectile>
+  </ThingDef>
+ 
+  <DamageDef ParentName="RJW_U_DamageBase">
+    <defName>RJW_U_FuckmeatificationShell</defName>
+    <label>fuckmeatification shell explosion</label>
+    <modExtensions>
+      <li Class="RJW_Unleashed_Combat.GeneModifierExtension">
+        <genderRelativityType>2</genderRelativityType>
+        <asXenogene>true</asXenogene>
+        <maleGeneset></maleGeneset>
+        <femaleGeneset></femaleGeneset>
+        <uniGeneset>
+  		<li MayRequire="vegapnk.rjw.genes">rjw_genes_masochist</li>
+  		<li MayRequire="vegapnk.rjw.genes">rjw_genes_bisexual</li>
+  		<li MayRequire="vegapnk.rjw.genes">rjw_genes_inflatable</li>
+  		<li MayRequire="vegapnk.rjw.genes">rjw_genes_living_cumbucket</li>
+  		<li MayRequire="vegapnk.rjw.genes">rjw_genes_aphrodisiac_pheromones</li>
+  		<li MayRequire="archersaiter.rjw.traits">RJW_Traits_Animal_Mind_Gene</li>
+  		<li MayRequire="archersaiter.rjw.traits">RJW_Traits_Rapetoy_Gene</li>
+  		<li MayRequire="archersaiter.rjw.traits">RJW_Traits_Submissive_Gene</li>
+  		<li MayRequire="archersaiter.rjw.traits">RJW_Traits_Insatiable_Gene</li>
+  	</uniGeneset>
+      </li>
+    </modExtensions>
+  </DamageDef>
+
+</Defs>

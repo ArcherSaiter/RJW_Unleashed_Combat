@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="RJW_Unleashed_ShellBase">
+    <defName>RJW_Shell_Aphrodisiac</defName>
+    <label>aphrodisiac shell</label>
+    <description>A pressurized shell that bursts on impact, covering the area in arousing aphrodisiac. Can be fired from mortars or installed as a trap. Explodes when damaged.</description>
+    <graphicData>
+      <texPath>Things/Ammo/RJW_U_MortarShell</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+	  <color>(199, 21, 133, 180)</color>
+    </graphicData>
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>9.9</explosiveRadius>
+        <explosiveDamageType>AphrodisiacShell</explosiveDamageType>
+        <explosiveExpandPerStackcount>0.4</explosiveExpandPerStackcount>
+        <startWickHitPointsPercent>0.7</startWickHitPointsPercent>
+        <postExplosionSpawnThingDef>Filth_Aphrodisiac</postExplosionSpawnThingDef>
+        <postExplosionSpawnChance>1</postExplosionSpawnChance>
+        <postExplosionSpawnThingCount>3</postExplosionSpawnThingCount>
+        <applyDamageToExplosionCellsNeighbors>true</applyDamageToExplosionCellsNeighbors>
+        <explosionEffect>ExtinguisherExplosion</explosionEffect>
+        <wickTicks>30~60</wickTicks>
+      </li>
+    </comps>
+    <projectileWhenLoaded>RJW_Bullet_Shell_Aphrodisiac</projectileWhenLoaded>
+    <costList>
+      <Steel>25</Steel>
+	  <UF_Solution>4</UF_Solution>
+    </costList>
+  </ThingDef>
+
+  <ThingDef ParentName="RJW_Bullet_Base">
+    <defName>RJW_Bullet_Shell_Aphrodisiac</defName>
+    <label>aphrodisiac shell</label>
+    <graphicData>
+      <texPath>Things/Projectile/ShellFirefoam</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+	  <color>(199, 21, 133, 180)</color>
+    </graphicData>
+    <projectile>
+      <damageDef>AphrodisiacShell</damageDef>
+      <postExplosionSpawnThingDef>Filth_Aphrodisiac</postExplosionSpawnThingDef>
+      <postExplosionSpawnChance>1</postExplosionSpawnChance>
+      <postExplosionSpawnThingCount>3</postExplosionSpawnThingCount>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="RJW_U_FilthBase">
+    <defName>Filth_Aphrodisiac</defName>
+    <label>aphrodisiac filth</label>
+    <graphicData>
+      <texPath>Things/Filth/PoolSoft</texPath>
+      <color>(199, 21, 133, 180)</color>
+      <drawSize>1.5</drawSize>
+    </graphicData>
+  </ThingDef>
+
+  <DamageDef ParentName="RJW_U_DamageBase">
+    <defName>AphrodisiacShell</defName>
+    <label>aphrodisiac shell explosion</label>
+    <modExtensions>
+      <li Class="RJW_Unleashed_Combat.DamageExtension">
+        <hediffEffect>Hediff_AphrodisiacCovered</hediffEffect>
+        <severity>1.0</severity>
+        <considerBodysize>false</considerBodysize>
+        <triggerSourceEffectLinkEx></triggerSourceEffectLinkEx>
+        <triggerTransformationAddon></triggerTransformationAddon>
+        <transformationMagnitude></transformationMagnitude>
+      </li>
+    </modExtensions>
+  </DamageDef>
+
+</Defs>

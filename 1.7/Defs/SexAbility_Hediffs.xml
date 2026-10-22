@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <HediffDef>
+    <defName>RJWUC_Seduced</defName>
+    <label>seduced</label>
+    <description>This person has been seduced out of the fight and is about to flee the map.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <initialSeverity>0.001</initialSeverity>
+    <maxSeverity>1</maxSeverity>
+    <isBad>false</isBad>
+    <tendable>false</tendable>
+	<stages>
+        <li>
+            <becomeVisible>false</becomeVisible>
+        </li>
+    </stages>
+    <comps>
+      <li Class="RJW_Unleashed_Combat.HediffCompProperties_SeducedEscape" />
+    </comps>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>RJWUC_BreakLoop</defName>
+    <label>breaking</label>
+    <description>This person is in the middle of violently breaking a victim's will.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <initialSeverity>0.001</initialSeverity>
+    <maxSeverity>1</maxSeverity>
+    <isBad>false</isBad>
+    <tendable>false</tendable>
+	<stages>
+        <li>
+            <becomeVisible>false</becomeVisible>
+        </li>
+    </stages>
+    <comps>
+      <li Class="RJW_Unleashed_Combat.HediffCompProperties_BreakLoop" />
+    </comps>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>RJWUC_LeapPounce</defName>
+    <label>pouncing</label>
+    <description>This person is mid-leap and will seduce their target on landing.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <initialSeverity>0.001</initialSeverity>
+    <maxSeverity>1</maxSeverity>
+    <isBad>false</isBad>
+    <tendable>false</tendable>
+	<stages>
+        <li>
+            <becomeVisible>false</becomeVisible>
+        </li>
+    </stages>
+    <comps>
+      <li Class="RJW_Unleashed_Combat.HediffCompProperties_LeapPounce" />
+    </comps>
+  </HediffDef>
+
+</Defs>

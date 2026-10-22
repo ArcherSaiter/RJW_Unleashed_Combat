@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <!-- 1. Cum Shower -->
+  <VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+    <defName>RJW_VPE_CumShower</defName>
+    <label>cum shower</label>
+    <description>Open a small skipgate to a reservoir of seed and drench the target area in a wide, thick shower of cum. Anything caught beneath it is coated and slowed, though the fluid does not conduct into electrical systems.</description>
+    <iconPath>Abilities/Cumcaster/CumShower</iconPath>
+    <abilityClass>RJW_Unleashed_VPE.Ability_CumShower</abilityClass>
+    <castTime>30</castTime>
+    <range>14.9</range>
+    <radius>3.9</radius>
+    <targetMode>Location</targetMode>
+    <castSound>VPE_IceShield_Cast</castSound>
+    <targetingParameters>
+      <canTargetLocations>true</canTargetLocations>
+      <canTargetPawns>true</canTargetPawns>
+      <canTargetBuildings>false</canTargetBuildings>
+    </targetingParameters>
+    <powerStatFactors>
+      <PsychicSensitivity>0.5</PsychicSensitivity>
+    </powerStatFactors>
+    <radiusStatFactors>
+      <PsychicSensitivity>0.25</PsychicSensitivity>
+    </radiusStatFactors>
+    <modExtensions>
+      <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+        <path>RJW_Cumcaster</path>
+        <level>1</level>
+        <order>1</order>
+        <psyfocusCost>0.03</psyfocusCost>
+        <entropyGain>10</entropyGain>
+      </li>
+    </modExtensions>
+  </VEF.Abilities.AbilityDef>
+
+  <!-- 2. Cum Catalyst -->
+  <VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+    <defName>RJW_VPE_CumCatalyst</defName>
+    <label>cum catalyst</label>
+    <description>Draw in and absorb every trace of cum in the target area, converting it into psychic potential. The caster gains a temporary amplification to psychic sensitivity for each patch absorbed, and recovers a sliver of psyfocus for every drop taken in. A churning sphere of semen is formed to orbit the caster for the duration.</description>
+    <iconPath>Abilities/Cumcaster/CumCatalyst</iconPath>
+    <abilityClass>RJW_Unleashed_VPE.Ability_CumCatalyst</abilityClass>
+    <castTime>60</castTime>
+    <range>12.9</range>
+    <radius>2.9</radius>
+    <targetMode>Location</targetMode>
+    <castSound>VPE_IceShield_Cast</castSound>
+    <targetingParameters>
+      <canTargetLocations>true</canTargetLocations>
+      <canTargetBuildings>false</canTargetBuildings>
+    </targetingParameters>
+    <power>0.01</power>
+    <radiusStatFactors>
+      <PsychicSensitivity>0.25</PsychicSensitivity>
+    </radiusStatFactors>
+    <modExtensions>
+      <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+        <path>RJW_Cumcaster</path>
+        <level>2</level>
+        <order>1</order>
+        <psyfocusCost>0.15</psyfocusCost>
+        <entropyGain>40</entropyGain>
+        <prerequisites>
+          <li>RJW_VPE_CumShower</li>
+        </prerequisites>
+      </li>
+    </modExtensions>
+  </VEF.Abilities.AbilityDef>
+
+  <!-- 3. Cum Rain -->
+  <VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+    <defName>RJW_VPE_CumRain</defName>
+    <label>cum rain</label>
+    <description>Open a large skipgate to remote cum reservoirs in the sky and force a downpour of cum across the entire region, coating everything left out in the open for a time.</description>
+    <iconPath>Abilities/Cumcaster/CumRain</iconPath>
+    <abilityClass>RJW_Unleashed_VPE.Ability_CumRain</abilityClass>
+    <castTime>120</castTime>
+    <range>0</range>
+    <targetMode>Self</targetMode>
+    <castSound>VPE_Hurricane_Cast</castSound>
+    <targetingParameters>
+      <canTargetSelf>true</canTargetSelf>
+    </targetingParameters>
+    <durationTime>5000</durationTime>
+    <durationTimeStatFactors>
+      <PsychicSensitivity>0.5</PsychicSensitivity>
+    </durationTimeStatFactors>
+    <showUndrafted>false</showUndrafted>
+    <modExtensions>
+      <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+        <path>RJW_Cumcaster</path>
+        <level>3</level>
+        <order>1</order>
+        <psyfocusCost>0.40</psyfocusCost>
+        <entropyGain>100</entropyGain>
+        <prerequisites>
+          <li>RJW_VPE_CumCatalyst</li>
+        </prerequisites>
+      </li>
+    </modExtensions>
+  </VEF.Abilities.AbilityDef>
+</Defs>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <!-- Orbiting sphere of seed spawned by the cum catalyst hediff -->
+  <ThingDef ParentName="MoteBase">
+    <defName>RJW_VPE_CumBall</defName>
+    <thingClass>VanillaPsycastsExpanded.MoteAttachedMovingAround</thingClass>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <drawOffscreen>true</drawOffscreen>
+    <graphicData>
+      <texPath>Effects/Cumcaster/CumBall/CumBall</texPath>
+      <drawSize>0.7</drawSize>
+    </graphicData>
+    <mote>
+      <solidTime>999999</solidTime>
+      <needsMaintenance>true</needsMaintenance>
+    </mote>
+  </ThingDef>
+
+  <!-- Burst of mist released as the seed is absorbed -->
+  <FleckDef ParentName="FleckBase">
+    <defName>RJW_VPE_CumMist</defName>
+    <solidTime>0.2</solidTime>
+    <fadeOutTime>0.5</fadeOutTime>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <graphicData>
+      <texPath>Effects/Cumcaster/CumMist</texPath>
+      <drawSize>(2, 2)</drawSize>
+    </graphicData>
+  </FleckDef>
+</Defs>

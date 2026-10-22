@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+   <ThingDef ParentName="RJW_U_GeneticCapsuleBase">
+     <defName>RJW_U_GeneticCapsule</defName>
+     <label>Genetic capsule</label>
+     <description>A collection of genetic samples, contained in a capsule.</description>
+	 <thingClass>RJW_Unleashed_Combat.Capsule</thingClass>
+     <graphicData>
+       <texPath>Things/Item/RJW_U_GeneticCapsule</texPath>
+       <drawSize>(1,1)</drawSize>
+       <!--<color>(0.5,0.5,0.5)</color>-->
+       <graphicClass>Graphic_Single</graphicClass>
+     </graphicData>
+	 <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+     </statBases>
+	 <stackLimit>1</stackLimit>
+	 <inspectorTabs>
+      <li>ITab_Genes</li>
+     </inspectorTabs>
+     <preventSpawningInResourcePod>true</preventSpawningInResourcePod>
+     <tradeNeverGenerateStacked>true</tradeNeverGenerateStacked>
+     <tickerType>Rare</tickerType>
+     <useHitPoints>true</useHitPoints>
+   </ThingDef>
+   
+   <ThingDef ParentName="RJW_U_GeneticCapsuleBase">
+     <defName>RJW_U_BlankGeneticCapsule</defName>
+     <label>Empty genetic capsule</label>
+     <description>An empty capsule, able to contain a collection of genetic samples.</description>
+     <graphicData>
+       <texPath>Things/Item/RJW_U_BlankGeneticCapsule</texPath>
+       <drawSize>(1,1)</drawSize>
+       <!--<color>(0.5,0.5,0.5)</color>-->
+       <graphicClass>Graphic_Single</graphicClass>
+     </graphicData>
+   </ThingDef>
+
+   <RecipeDef ParentName="RJW_U_GeneticCapsuleBaseRecipe">
+     <defName>RJW_U_GeneticCapsuleRecipe</defName>
+     <label>Make capsule</label>
+     <description>Craft a capsule for genetic material.</description>
+     <jobString>Making capsule.</jobString>
+     <ingredients>
+         <li>
+           <filter>
+             <thingDefs>
+               <li>ComponentIndustrial</li>
+             </thingDefs>
+           </filter>
+           <count>2</count>
+         </li>
+		 <li>
+           <filter>
+             <thingDefs>
+               <li>ComponentSpacer</li>
+             </thingDefs>
+           </filter>
+           <count>1</count>
+         </li>
+		 <li>
+           <filter>
+             <thingDefs>
+               <li>Steel</li>
+             </thingDefs>
+           </filter>
+           <count>5</count>
+         </li>
+      </ingredients>
+     <products>
+       <RJW_U_BlankGeneticCapsule>1</RJW_U_BlankGeneticCapsule>
+     </products>
+   </RecipeDef>
+
+  <RecipeDef>
+    <defName>RJW_U_FillGeneticCapsule</defName>
+    <label>Fill genetic capsule</label>
+    <description>Gather enough samples and fill a genetic capsule. This kills the target.</description>
+    <workerClass>RJW_Unleashed_Combat.Recipe_FillGeneticCapsule</workerClass>
+	<jobString>Gathering genetic samples.</jobString>
+    <workAmount>2000</workAmount>
+	<hideBodyPartNames>true</hideBodyPartNames>
+    <targetsBodyPart>false</targetsBodyPart>
+    <surgerySuccessChanceFactor>2</surgerySuccessChanceFactor>
+	<recipeUsers>
+      <li>Human</li>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">CreepJoiner</li>
+    </recipeUsers>
+    <skillRequirements>
+        <Medicine>6</Medicine>
+    </skillRequirements>
+    <soundWorking>Recipe_Surgery</soundWorking>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+			<li>RJW_U_BlankGeneticCapsule</li>
+		  </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+
+</Defs>

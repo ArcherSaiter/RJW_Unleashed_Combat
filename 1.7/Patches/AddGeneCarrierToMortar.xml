@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/ThingDef[defName="Artillery_Mortar"]/comps</xpath>
+    <value>
+      <li Class="RJW_Unleashed_Combat.CompProperties_GeneCarrier"/>
+    </value>
+  </Operation>
+</Patch>

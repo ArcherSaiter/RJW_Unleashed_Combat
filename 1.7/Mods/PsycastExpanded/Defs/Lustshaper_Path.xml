@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <VanillaPsycastsExpanded.PsycasterPathDef>
+    <defName>RJW_Lustshaper</defName>
+    <label>lustshaper</label>
+    <description>A perverse twist of psychic entropy, shaping desire itself to bend willing or weakened minds toward pleasure.</description>
+    <background>UI/Backgrounds/LustshaperPath</background>
+    <altBackground>UI/AlternativeBackgrounds/PathBG_Lustshaper</altBackground>
+    <tab>RJW</tab>
+    <tooltip>Lustshapers weave psychic influence into pulses of raw yearning, cloaking allies in lust-shields, conjuring drifting crystals of pheromones, and unleashing storms of desire. Their powers work only on those capable of carnal need.</tooltip>
+  </VanillaPsycastsExpanded.PsycasterPathDef>
+</Defs>

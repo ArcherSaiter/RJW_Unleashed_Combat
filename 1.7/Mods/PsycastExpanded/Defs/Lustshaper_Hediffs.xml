@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="UTF-8"?><Defs>
+  <HediffDef ParentName="PsycastHediffBase">
+    <defName>RJW_VPE_LustSpike</defName>
+    <label>lust spike</label>
+    <description>A flash of psychic yearning surges through the body, sharply inflaming lust.</description>
+    <isBad>false</isBad>
+	<stages>
+		<li>
+			<becomeVisible>false</becomeVisible>
+		</li>
+	</stages>
+    <comps>
+      <li Class="RJW_Unleashed_VPE.HediffCompProperties_Lust"><amount>0.15</amount></li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef ParentName="PsycastHediffBase">
+    <defName>RJW_VPE_RayOfDesire</defName>
+    <label>ray of desire</label>
+    <description>Channeling a piercing beam of psychic yearning.</description>
+    <isBad>false</isBad>
+	<stages>
+		<li>
+			<becomeVisible>false</becomeVisible>
+		</li>
+	</stages>
+  </HediffDef>
+
+  <HediffDef ParentName="PsycastHediffBase">
+    <defName>RJW_VPE_LustShield</defName>
+    <label>lust shield</label>
+    <description>A shimmering aura of psychic desire that deflects lust drain and lashes back at aggressors with yearning.</description>
+    <hediffClass>RJW_Unleashed_VPE.Hediff_LustShield</hediffClass>
+    <isBad>false</isBad>
+	<stages>
+		<li>
+			<becomeVisible>false</becomeVisible>
+		</li>
+	</stages>
+    <comps>
+      <li Class="VanillaPsycastsExpanded.HediffCompProperties_PlaySound"><endSound>VPE_IceShield_End</endSound><sustainer>VPE_IceShield_Sustainer</sustainer></li>
+      <li Class="VanillaPsycastsExpanded.HediffCompProperties_DisappearsOnDowned" />
+	  <li Class="VanillaPsycastsExpanded.HediffCompProperties_DisappearsOnDespawn" />
+    </comps>
+  </HediffDef>
+
+  <HediffDef ParentName="PsycastHediffBase">
+    <defName>RJW_VPE_LustStormSource</defName>
+    <label>lust storm</label>
+    <description>A roiling psychic storm of desire swirling around the caster, inflaming lust in all nearby beings.</description>
+    <hediffClass>RJW_Unleashed_VPE.Hediff_LustStorm</hediffClass>
+    <isBad>false</isBad>
+	<stages>
+		<li>
+			<becomeVisible>false</becomeVisible>
+		</li>
+	</stages>
+    <comps>
+      <li Class="VanillaPsycastsExpanded.HediffCompProperties_PlaySound">
+	  <endSound>Psycast_Neuroquake_CastEnd</endSound>
+	  <sustainer>Tornado</sustainer>
+	  </li>
+      <li Class="VanillaPsycastsExpanded.HediffCompProperties_DisappearsOnDowned" />
+      <li Class="VanillaPsycastsExpanded.HediffCompProperties_DisappearsOnDespawn" />
+    </comps>
+  </HediffDef>
+</Defs>

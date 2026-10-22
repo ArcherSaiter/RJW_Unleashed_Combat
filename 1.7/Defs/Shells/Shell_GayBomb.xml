@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+   
+  <ThingDef ParentName="RJW_U_GeneticShellBase">
+    <defName>RJW_U_ShellGayBomb</defName>
+    <label>gay bomb shell</label>
+    <description>A pressurized shell that bursts on impact, changing genes of nearby humanlikes. Can be fired from mortars or installed as a trap. Explodes when damaged.</description>
+    <graphicData>
+      <texPath>Things/Ammo/RJW_U_MortarShell</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+  	<color>(135, 206, 250, 180)</color>
+    </graphicData>
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <explosiveDamageType>RJW_U_GayBombShell</explosiveDamageType>
+      </li>
+    </comps>
+    <projectileWhenLoaded>RJW_U_BulletShellGayBomb</projectileWhenLoaded>
+    <costList>
+      <Steel>25</Steel>
+  	<UF_Solution>4</UF_Solution>
+    </costList>
+  </ThingDef>
+ 
+  <ThingDef ParentName="RJW_Bullet_Base">
+    <defName>RJW_U_BulletShellGayBomb</defName>
+    <label>gay bomb shell</label>
+    <graphicData>
+      <texPath>Things/Projectile/ShellFirefoam</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+  	<color>(135, 206, 250, 180)</color>
+    </graphicData>
+    <projectile>
+      <damageDef>RJW_U_GayBombShell</damageDef>
+    </projectile>
+  </ThingDef>
+ 
+  <DamageDef ParentName="RJW_U_DamageBase">
+    <defName>RJW_U_GayBombShell</defName>
+    <label>gay bomb shell explosion</label>
+    <modExtensions>
+      <li Class="RJW_Unleashed_Combat.GeneModifierExtension">
+        <genderRelativityType>2</genderRelativityType>
+        <asXenogene>true</asXenogene>
+        <maleGeneset></maleGeneset>
+        <femaleGeneset></femaleGeneset>
+        <uniGeneset>
+  		<li MayRequire="vegapnk.rjw.genes">rjw_genes_infectious_increased_sex_need</li>
+  		<li MayRequire="vegapnk.rjw.genes">rjw_genes_infectious_homosexuality</li>
+  	</uniGeneset>
+      </li>
+    </modExtensions>
+  </DamageDef>
+
+</Defs>

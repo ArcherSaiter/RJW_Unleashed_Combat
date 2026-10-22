@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="RJW_Unleashed_ShellBase">
+    <defName>RJW_Shell_Cum</defName>
+    <label>cum shell</label>
+    <description>A pressurized shell that bursts on impact, covering the area in thick cum. Can be fired from mortars or installed as a trap. Explodes when damaged.</description>
+    <graphicData>
+      <texPath>Things/Ammo/RJW_U_MortarShell</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+	  <color>(255, 255, 255, 255)</color>
+    </graphicData>
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>9.9</explosiveRadius>
+        <explosiveDamageType>CumShell</explosiveDamageType>
+        <explosiveExpandPerStackcount>0.4</explosiveExpandPerStackcount>
+        <startWickHitPointsPercent>0.7</startWickHitPointsPercent>
+        <postExplosionSpawnThingDef>Filth_ThickCum</postExplosionSpawnThingDef>
+        <postExplosionSpawnChance>1</postExplosionSpawnChance>
+        <postExplosionSpawnThingCount>3</postExplosionSpawnThingCount>
+        <applyDamageToExplosionCellsNeighbors>true</applyDamageToExplosionCellsNeighbors>
+        <explosionEffect>ExtinguisherExplosion</explosionEffect>
+        <wickTicks>30~60</wickTicks>
+      </li>
+    </comps>
+    <projectileWhenLoaded>RJW_Bullet_Shell_Cum</projectileWhenLoaded>
+    <costList>
+      <Steel>25</Steel>
+	  <Cumpilation_Cum>40</Cumpilation_Cum>
+    </costList>
+  </ThingDef>
+
+  <ThingDef ParentName="RJW_Bullet_Base">
+    <defName>RJW_Bullet_Shell_Cum</defName>
+    <label>cum shell</label>
+    <graphicData>
+      <texPath>Things/Projectile/ShellFirefoam</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+	  <color>(235, 232, 225, 180)</color>
+    </graphicData>
+    <projectile>
+      <damageDef>CumShell</damageDef>
+      <postExplosionSpawnThingDef>Filth_ThickCum</postExplosionSpawnThingDef>
+      <postExplosionSpawnChance>1</postExplosionSpawnChance>
+      <postExplosionSpawnThingCount>3</postExplosionSpawnThingCount>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="RJW_U_FilthBase">
+    <defName>Filth_ThickCum</defName>
+    <label>thick cum</label>
+    <pathCost>5</pathCost> <!-- slows pawns walking through it (~72% move speed) -->
+    <graphicData>
+      <texPath>Things/Filth/PoolSoft</texPath>
+      <color>(235, 232, 225, 180)</color>
+      <drawSize>1.5</drawSize>
+    </graphicData>
+  </ThingDef>
+  
+  <DamageDef ParentName="RJW_U_DamageBase">
+    <defName>CumShell</defName>
+    <label>cum shell explosion</label>
+    <modExtensions>
+      <li Class="RJW_Unleashed_Combat.DamageExtension">
+		<hediffEffect>Hediff_ThickCumCovered</hediffEffect> <!--hediffDef to give every damaged pawn-->
+		<severity>1.0</severity> <!--default severity for hediffEffect-->
+		<considerBodysize>false</considerBodysize> <!--adjust severity by bodysize?-->
+		<triggerSourceEffectLinkEx></triggerSourceEffectLinkEx> <!--ThingDef for SourceEffectLinkEx-->
+		<triggerTransformationAddon></triggerTransformationAddon> <!--ThingDef for TransformationAddon-->
+		<transformationMagnitude></transformationMagnitude> <!--number of times the TransformationAddon should be applied-->
+      </li>
+    </modExtensions>
+  </DamageDef>
+
+</Defs>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+    <name>RJW_Unleashed_Combat</name>
+    <author>ArcherSaiter</author>
+    <packageId>rjw.unleashed.combat</packageId>
+    <modVersion>1.0</modVersion>
+    <url>https://github.com/ArcherSaiter/RJW_Unleashed_Combat</url>
+    <supportedVersions>
+		<li>1.7</li>
+    </supportedVersions>
+    <modDependencies>
+        <li>
+            <packageId>rim.job.world</packageId>
+            <displayName>RimJobWorld</displayName>
+            <downloadUrl>https://gitgud.io/Ed86/rjw</downloadUrl>
+        </li>
+		<li>
+            <packageId>rjw.unleashed.framework</packageId>
+            <displayName>RJW_Unleashed_Framework</displayName>
+            <downloadUrl>https://github.com/ArcherSaiter/RJW_Unleashed_Framework</downloadUrl>
+        </li>
+		<li>
+            <packageId>Vegapnk.rjw.genes</packageId>
+            <displayName>RJW Genes</displayName>
+            <downloadUrl>https://github.com/vegapnk/RJW-Genes</downloadUrl>
+        </li>
+		<li>
+            <packageId>vegapnk.cumpilation</packageId>
+            <displayName>Cumpilation</displayName>
+            <downloadUrl>https://github.com/vegapnk/Cumpilation</downloadUrl>
+        </li>
+		<li>
+            <packageId>rjw.sexperience</packageId>
+            <displayName>RJW Sexperience</displayName>
+            <downloadUrl>https://gitgud.io/amevarashi/rjw-sexperience</downloadUrl>
+        </li>
+		<li>
+          <packageId>OskarPotocki.VanillaFactionsExpanded.Core</packageId>
+          <displayName>Vanilla Expanded Framework</displayName>
+          <downloadUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2023507013</downloadUrl>
+		</li>
+    </modDependencies>
+    <loadAfter>
+        <li>Ludeon.RimWorld</li>
+        <li>Ludeon.RimWorld.Royalty</li>
+        <li>Ludeon.RimWorld.Ideology</li>
+        <li>Ludeon.RimWorld.Biotech</li>
+		<li>Ludeon.RimWorld.Anomaly</li>
+        <li>rim.job.world</li>
+		<li>rjw.sexperience</li>
+		<li>vegapnk.rjw.genes</li>
+		<li>rjw.unleashed.framework</li>
+		<li>archersaiter.rjw.traits</li>
+		<li>rjw.unleashed.gastronomy</li>
+		<li>OskarPotocki.VanillaFactionsExpanded.Core</li>
+		<li>VanillaExpanded.VPsycastsE</li>
+		<li>CETeam.CombatExtended</li>
+    </loadAfter>
+    <description>
+		
+	</description>
+</ModMetaData>

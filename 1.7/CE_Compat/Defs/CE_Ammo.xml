@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ThingCategoryDef>
+		<defName>AmmoRJWUC_CumShot</defName>
+		<label>cum shots</label>
+		<parent>AmmoShotguns</parent>
+		<iconPath>UI/Icons/ThingCategories/CaliberShotgun</iconPath>
+	</ThingCategoryDef>
+
+	<CombatExtended.AmmoSetDef>
+		<defName>AmmoSet_RJW_U_CumShot</defName>
+		<label>cum shot</label>
+		<ammoTypes>
+			<Ammo_RJW_U_CumShot>RJW_U_Bullet_Cum_CE</Ammo_RJW_U_CumShot>
+		</ammoTypes>
+		<similarTo>AmmoSet_Shotgun</similarTo>
+	</CombatExtended.AmmoSetDef>
+	
+	<CombatExtended.AmmoCategoryDef>
+		<defName>CumShot</defName>
+		<label>Cum shot</label>
+		<description>A pressurised cum capsule that hits hard and bursts on impact.</description>
+	</CombatExtended.AmmoCategoryDef>
+
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="AmmoBase">
+		<defName>Ammo_RJW_U_CumShot</defName>
+		<label>cum shot</label>
+		<description>A vessel of pressurised thick cum capsules with a supply system designed specifically for cum shot guns. Barely lethal, but it leaves a target thoroughly drenched.</description>
+		<graphicData>
+			<texPath>Things/Ammo/RJW_U_CumShot</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<ammoClass>Slug</ammoClass>
+		<cookOffProjectile>RJW_U_Bullet_Cum_CE</cookOffProjectile>
+		<statBases>
+			<Mass>0.05</Mass>
+			<Bulk>0.05</Bulk>
+		</statBases>
+		<tradeTags>
+			<li>CE_AutoEnableTrade</li>
+			<li>CE_AutoEnableCrafting</li>
+		</tradeTags>
+		<thingCategories>
+			<li>AmmoRJWUC_CumShot</li>
+		</thingCategories>
+	</ThingDef>
+
+	<RecipeDef ParentName="AmmoRecipeBase">
+		<defName>MakeAmmo_RJW_U_CumShot</defName>
+		<label>make cum shots x200</label>
+		<description>Craft 200 cum shots.</description>
+		<jobString>Making cum shots.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Cumpilation_Cum</li>
+					</thingDefs>
+				</filter>
+				<count>200</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Cumpilation_Cum</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Ammo_RJW_U_CumShot>200</Ammo_RJW_U_CumShot>
+		</products>
+		<workAmount>1000</workAmount>
+	</RecipeDef>
+
+</Defs>

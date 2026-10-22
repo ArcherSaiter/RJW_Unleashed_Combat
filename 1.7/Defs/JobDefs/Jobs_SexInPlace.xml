@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <JobDef>
+    <defName>RJWUC_sex_in_place</defName>
+    <driverClass>RJW_Unleashed_Combat.JobDriver_SexInPlace</driverClass>
+    <reportString>having sex.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+
+  <JobDef>
+    <defName>RJWUC_sex_in_place_reciever</defName>
+    <driverClass>RJW_Unleashed_Combat.JobDriver_SexInPlaceReciever</driverClass>
+    <reportString>having sex.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+
+</Defs>

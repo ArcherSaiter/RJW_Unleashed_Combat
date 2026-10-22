@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+   
+  <ThingDef ParentName="RJW_U_GeneticShellBase">
+    <defName>RJW_U_ShellDollification</defName>
+    <label>dollification shell</label>
+    <description>A pressurized shell that bursts on impact, changing genes of nearby humanlikes. Can be fired from mortars or installed as a trap. Explodes when damaged.</description>
+    <graphicData>
+      <texPath>Things/Ammo/RJW_U_MortarShell</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+  	<color>(35, 35, 35, 180)</color>
+    </graphicData>
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <explosiveDamageType>RJW_U_DollificationShell</explosiveDamageType>
+      </li>
+    </comps>
+    <projectileWhenLoaded>RJW_U_BulletShellDollification</projectileWhenLoaded>
+    <costList>
+      <Steel>25</Steel>
+  	<UF_Solution>4</UF_Solution>
+    </costList>
+  </ThingDef>
+ 
+  <ThingDef ParentName="RJW_Bullet_Base">
+    <defName>RJW_U_BulletShellDollification</defName>
+    <label>dollification shell</label>
+    <graphicData>
+      <texPath>Things/Projectile/ShellFirefoam</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+  	<color>(35, 35, 35, 180)</color>
+    </graphicData>
+    <projectile>
+      <damageDef>RJW_U_DollificationShell</damageDef>
+    </projectile>
+  </ThingDef>
+ 
+  <DamageDef ParentName="RJW_U_DamageBase">
+    <defName>RJW_U_DollificationShell</defName>
+    <label>dollification shell explosion</label>
+    <modExtensions>
+      <li Class="RJW_Unleashed_Combat.GeneModifierExtension">
+        <genderRelativityType>2</genderRelativityType>
+        <asXenogene>true</asXenogene>
+        <maleGeneset></maleGeneset>
+        <femaleGeneset></femaleGeneset>
+        <uniGeneset>
+  		<li>ArchiteMetabolism</li>
+  		<li>Ageless</li>
+  		<li>DiseaseFree</li>
+  		<li>PerfectImmunity</li>
+  		<li>PsychicBonding</li>
+  		<li>MoveSpeed_Slow</li>
+  		<li>Mood_Sanguine</li>
+  		<li>MinTemp_SmallDecrease</li>
+  		<li>MaxTemp_SmallIncrease</li>
+  		<li>ToxResist_Partial</li>
+  		<li MayRequire="ludeon.rimworld.odyssey">VacuumResistance_Partial</li>
+  		<li>Aggression_DeadCalm</li>
+  		<li>ViolenceDisabled</li>
+  		<li>KindInstinct</li>
+  		<li>Neversleep</li>
+  		<li>Delicate</li>
+  		<li>Pain_Reduced</li>
+  		<li>Libido_High</li>
+  		<li MayRequire="vegapnk.rjw.genes">rjw_genes_blocked_masturbation</li>
+  		<li>Sterile</li>
+  		<li>Beauty_Beautiful</li>
+  		<li>Hair_LongOnly</li>
+  		<li>Body_Standard</li>
+  		<li>Body_Thin</li>
+  		<li>Hair_SnowWhite</li>
+  		<li>Hair_Gray</li>
+  		<li>Hair_Blonde</li>
+  		<li>Hair_SandyBlonde</li>
+  		<li>Hair_LightOrange</li>
+  		<li>Hair_ReddishBrown</li>
+  		<li>Hair_DarkBrown</li>
+  		<li>Hair_DarkSaturatedReddish</li>
+  		<li>Hair_DarkReddish</li>
+  		<li>Hair_MidBlack</li>
+  		<li>Hair_DarkBlack</li>
+  		<li>Hair_InkBlack</li>
+  		<li>Hair_LightBlue</li>
+  		<li>Hair_LightTeal</li>
+  		<li>Hair_LightGreen</li>
+  		<li>Hair_Pink</li>
+  		<li>Hair_LightPurple</li>
+  		<li>Hair_BrightRed</li>
+  		<li>Learning_Slow</li>
+  		<li>Hair_Grayless</li>
+  		<li>AptitudeTerrible_Shooting</li>
+  		<li>AptitudeTerrible_Melee</li>
+  		<li>AptitudeTerrible_Construction</li>
+  		<li>AptitudeTerrible_Mining</li>
+  		<li>AptitudeRemarkable_Sex</li>
+  		<li MayRequire="vegapnk.rjw.genes">rjw_genes_no_fluid</li>
+  		<li MayRequire="vegapnk.rjw.genes">rjw_genes_inflatable</li>
+  		<li MayRequire="archersaiter.rjw.traits">RJW_Traits_Submissive_Gene</li>
+  	</uniGeneset>
+      </li>
+    </modExtensions>
+  </DamageDef>
+
+</Defs>

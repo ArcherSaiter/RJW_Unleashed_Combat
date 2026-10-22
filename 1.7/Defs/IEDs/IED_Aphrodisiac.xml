@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="RJW_U_TrapIEDBase">
+    <defName>RJW_U_TrapIED_Aphrodisiac</defName>
+    <label>IED aphrodisiac trap</label>
+    <description>A pair of aphrodisiac shells connected to a trigger which detonates on touch or bullet impact. It is hidden in the surrounding terrain, but can be placed adjacent to other traps. Animals can sense these when calm.</description>
+    <graphicData>
+      <texPath>Things/Building/Security/RJWUC_IED_Aphrodisiac</texPath>
+    </graphicData>
+    <uiOrder>45</uiOrder>
+    <costList>
+      <RJW_Shell_Aphrodisiac>2</RJW_Shell_Aphrodisiac>
+    </costList>
+    <designationHotKey>Misc10</designationHotKey>
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>9.9</explosiveRadius>
+        <explosiveDamageType>AphrodisiacShell</explosiveDamageType>
+        <startWickHitPointsPercent>0.2</startWickHitPointsPercent>
+        <postExplosionSpawnThingDef>Filth_Aphrodisiac</postExplosionSpawnThingDef>
+        <postExplosionSpawnChance>1</postExplosionSpawnChance>
+        <postExplosionSpawnThingCount>3</postExplosionSpawnThingCount>
+        <applyDamageToExplosionCellsNeighbors>true</applyDamageToExplosionCellsNeighbors>
+        <explosionEffect>ExtinguisherExplosion</explosionEffect>
+        <wickTicks>15</wickTicks>
+        <startWickOnDamageTaken>
+          <li>Bullet</li>
+          <li>Arrow</li>
+          <li>ArrowHighVelocity</li>
+        </startWickOnDamageTaken>
+      </li>
+    </comps>
+    <specialDisplayRadius>9.9</specialDisplayRadius>
+  </ThingDef>
+
+</Defs>

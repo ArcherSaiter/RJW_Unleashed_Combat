@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <!-- Mod-local copy of the psychic explosion for Release Desire / Passion Surge -->
+  <FleckDef ParentName="FleckBase">
+    <defName>RJW_VPE_LustExplosion</defName>
+    <solidTime>0.3</solidTime>
+    <fadeOutTime>0.1</fadeOutTime>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <graphicData Class="VanillaPsycastsExpanded.Graphics.GraphicData_Animated">
+      <texPath>Effects/Lustshaper/Explosion</texPath>
+      <ticksPerFrame>7</ticksPerFrame>
+      <graphicClass>VanillaPsycastsExpanded.Graphics.Graphic_Fleck_Animated</graphicClass>
+      <shaderType>MoteGlow</shaderType>
+      <drawSize>(20, 20)</drawSize>
+    </graphicData>
+  </FleckDef>
+
+  <!-- Mod-local copy of the cyclone dust puff -->
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>RJW_VPE_LustCyclonPuff</defName>
+    <graphicData>
+      <texPath>Effects/Lustshaper/LustCyclon/LustCyclonPuff</texPath>
+      <renderInstanced>true</renderInstanced>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.04</fadeInTime>
+    <solidTime>0.03</solidTime>
+    <fadeOutTime>1</fadeOutTime>
+  </FleckDef>
+</Defs>

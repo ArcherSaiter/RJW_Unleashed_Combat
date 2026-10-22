@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <!-- Lust Spike projectile -->
+  <ThingDef ParentName="BaseBullet">
+    <defName>RJW_VPE_LustSpike</defName>
+    <label>lust spike</label>
+    <description>A lancing bolt of psychic yearning.</description>
+    <thingClass>VEF.Abilities.AbilityProjectile</thingClass>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <drawOffscreen>true</drawOffscreen>
+    <graphicData>
+      <texPath>Effects/Lustshaper/LustSpike</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>Transparent</shaderType>
+    </graphicData>
+    <projectile>
+      <damageDef>Blunt</damageDef>
+      <damageAmountBase>0</damageAmountBase>
+      <speed>70</speed>
+    </projectile>
+  </ThingDef>
+
+  <!-- Pheromone breath projectile -->
+  <VEF.Weapons.ExpandableProjectileDef ParentName="BaseBullet">
+    <defName>RJW_VPE_PheromoneBreath</defName>
+    <label>pheromone breath</label>
+    <thingClass>RJW_Unleashed_VPE.LustBreathProjectile</thingClass>
+    <graphicData>
+      <texPath>Effects/Lustshaper/PheromoneBreath/Proj</texPath>
+      <texPathFadeOut>Effects/Lustshaper/PheromoneBreath/Proj_FadeOut</texPathFadeOut>
+      <shaderType>MoteGlow</shaderType>
+    </graphicData>
+    <projectile>
+      <damageDef>Blunt</damageDef>
+      <damageAmountBase>0</damageAmountBase>
+      <speed>45</speed>
+    </projectile>
+    <drawOffscreen>true</drawOffscreen>
+    <lifeTimeDuration>60</lifeTimeDuration>
+    <widthScaleFactor>0.65</widthScaleFactor>
+    <heightScaleFactor>1</heightScaleFactor>
+    <startingPositionOffset>(0,0,-1)</startingPositionOffset>
+    <totalSizeScale>2.0</totalSizeScale>
+    <tickFrameRate>2</tickFrameRate>
+    <finalTickFrameRate>5</finalTickFrameRate>
+    <tickDamageRate>20</tickDamageRate>
+    <dealsDamageOnce>false</dealsDamageOnce>
+    <minDistanceToAffect>0.5</minDistanceToAffect>
+    <modExtensions>
+      <li Class="RJW_Unleashed_VPE.LustProjectileProps">
+        <lustAmount>0.10</lustAmount>
+      </li>
+    </modExtensions>
+  </VEF.Weapons.ExpandableProjectileDef>
+
+  <!-- Pheromone crystal building -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>RJW_VPE_PheromoneCrystal</defName>
+    <label>pheromonous crystal</label>
+    <description>A temporary crystal pulsing with psychic pheromones, radiating an aura of yearning.</description>
+    <thingClass>Building</thingClass>
+    <graphicData>
+      <texPath>Things/Building/Lustshaper/PheromoneCrystal</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.5,1.5)</drawSize>
+      <shaderType>MoteGlow</shaderType>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>0</pathCost>
+    <fillPercent>0</fillPercent>
+    <useHitPoints>false</useHitPoints>
+    <size>(1,1)</size>
+    <tickerType>Normal</tickerType>
+    <comps>
+      <li Class="RJW_Unleashed_VPE.CompProperties_PheromoneCrystal">
+        <radius>6.9</radius>
+        <amount>0.05</amount>
+        <intervalTicks>120</intervalTicks>
+      </li>
+      <li><compClass>VEF.Abilities.CompSpawnedBuilding</compClass></li>
+    </comps>
+    <statBases>
+      <Flammability>0</Flammability>
+    </statBases>
+    <building>
+      <isEdifice>false</isEdifice>
+      <isInert>true</isInert>
+    </building>
+    <selectable>false</selectable>
+    <tradeability>None</tradeability>
+    <destroyOnDrop>true</destroyOnDrop>
+  </ThingDef>
+
+  <!-- Lust Cyclon thing -->
+  <ThingDef ParentName="EtherealThingBase">
+    <defName>RJW_VPE_LustCyclon</defName>
+    <label>lust cyclon</label>
+    <description>A swirling vortex of psychic yearning, draining lust from all caught within.</description>
+    <thingClass>RJW_Unleashed_VPE.LustCyclon</thingClass>
+    <tickerType>Normal</tickerType>
+    <drawerType>RealtimeOnly</drawerType>
+    <drawOffscreen>true</drawOffscreen>
+    <seeThroughFog>true</seeThroughFog>
+    <alwaysFlee>true</alwaysFlee>
+    <graphicData>
+      <texPath>Effects/Lustshaper/LustCyclon/LustCyclonFat</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>MoteGlow</shaderType>
+    </graphicData>
+    <comps>
+      <li Class="CompProperties_WindSource" />
+    </comps>
+  </ThingDef>
+  
+  <!-- Lust Ray projectile -->
+  <ThingDef ParentName="BaseBullet">
+    <defName>RJW_VPE_LustRay</defName>
+    <label>ray of desire</label>
+    <thingClass>RJW_Unleashed_VPE.LustRayProjectile</thingClass>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <drawOffscreen>true</drawOffscreen>
+    <graphicData Class="VanillaPsycastsExpanded.Graphics.GraphicData_Animated">
+      <texPath>Effects/Lustshaper/LustRay</texPath>
+      <graphicClass>VanillaPsycastsExpanded.Graphics.Graphic_Animated</graphicClass>
+      <ticksPerFrame>3</ticksPerFrame>
+    </graphicData>
+    <projectile>
+      <speed>75</speed>
+      <damageDef>Blunt</damageDef>
+      <damageAmountBase>0</damageAmountBase>
+    </projectile>
+    <modExtensions>
+      <li Class="RJW_Unleashed_VPE.LustProjectileProps">
+        <lustAmount>0.10</lustAmount>
+      </li>
+    </modExtensions>
+  </ThingDef>
+</Defs>

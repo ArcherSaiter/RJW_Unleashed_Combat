@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <VanillaPsycastsExpanded.PsycasterPathDef>
+    <defName>RJW_Cumcaster</defName>
+    <label>cumcaster</label>
+    <description>A debased school of psychic magic that turns base seed into raw psychic fuel, drenching the land in it before drawing its power inward.</description>
+    <background>UI/Backgrounds/CumcasterPath</background>
+    <altBackground>UI/AlternativeBackgrounds/PathBG_Cumcaster</altBackground>
+    <tab>RJW</tab>
+    <tooltip>Cumcasters weaponize spilled seed as both a battlefield hazard and a source of power. They conjure wide showers of thick cum that cling to and slow the unwary, draw the essence of any cum around them into themselves to sharpen their own psychic sensitivity, and finally call down an unnatural downpour of cum over the entire region.</tooltip>
+  </VanillaPsycastsExpanded.PsycasterPathDef>
+</Defs>

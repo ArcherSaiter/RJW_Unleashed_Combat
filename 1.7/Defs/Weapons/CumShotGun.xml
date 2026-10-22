@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <DamageDef ParentName="BluntBase">
+    <defName>RJW_U_CumShot</defName>
+    <label>cum shot</label>
+    <workerClass>RJW_Unleashed_Combat.ExtendedInjuryDamageWorker</workerClass>
+    <deathMessage>{0} has been cum-shot to death.</deathMessage>
+    <impactSoundType>Bullet</impactSoundType>
+    <modExtensions>
+      <li Class="RJW_Unleashed_Combat.DamageExtension">
+        <hediffEffect>Hediff_ThickCumCovered</hediffEffect>
+        <severity>0.35</severity>
+        <considerBodysize>true</considerBodysize>
+      </li>
+    </modExtensions>
+  </DamageDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>RJW_U_Bullet_Cum</defName>
+    <label>cum round</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>RJW_U_CumShot</damageDef>
+      <damageAmountBase>7</damageAmountBase>
+      <stoppingPower>1</stoppingPower>
+      <speed>55</speed>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>RJW_U_CumShotGun</defName>
+    <label>cum shot gun</label>
+    <description>A specially designed weapon made to fire high-velocity pressurised cum shots. Fired shots mostly deal blunt damage and burst on impact, spraying thick, sticky seed over their target, leaving them drenched and impairing their movement.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/RJW_U_CumShotGun</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <statBases>
+      <WorkToMake>6000</WorkToMake>
+      <Mass>1.6</Mass>
+      <AccuracyTouch>0.80</AccuracyTouch>
+      <AccuracyShort>0.75</AccuracyShort>
+      <AccuracyMedium>0.55</AccuracyMedium>
+      <AccuracyLong>0.40</AccuracyLong>
+      <RangedWeapon_Cooldown>1.6</RangedWeapon_Cooldown>
+    </statBases>
+    <weaponTags>
+      <li>SimpleGun</li>
+    </weaponTags>
+    <weaponClasses>
+      <li>RangedLight</li>
+    </weaponClasses>
+    <costList>
+      <Steel>30</Steel>
+      <ComponentIndustrial>3</ComponentIndustrial>
+      <Cumpilation_Cum>20</Cumpilation_Cum>
+    </costList>
+    <recipeMaker>
+      <skillRequirements>
+        <Crafting>4</Crafting>
+      </skillRequirements>
+      <displayPriority>400</displayPriority>
+    </recipeMaker>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>RJW_U_Bullet_Cum</defaultProjectile>
+        <warmupTime>0.3</warmupTime>
+        <range>25</range>
+        <soundCast>Shot_AssaultRifle</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+		<burstShotCount>3</burstShotCount>
+        <ticksBetweenBurstShots>10</ticksBetweenBurstShots>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>8</power>
+        <cooldownTime>1.6</cooldownTime>
+      </li>
+    </tools>
+	<weaponTags>
+      <li>IndustrialGunAdvanced</li>
+      <li>AssaultRifle</li>
+    </weaponTags>
+  </ThingDef>
+
+</Defs>

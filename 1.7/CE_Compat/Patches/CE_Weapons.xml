@@ -25,8 +25,6 @@
 			<hasStandardCommand>true</hasStandardCommand>
 			<defaultProjectile>RJW_U_Bullet_Cum_CE</defaultProjectile>
 			<warmupTime>1.0</warmupTime>
-			<burstShotCount>5</burstShotCount>
-			<ticksBetweenBurstShots>10</ticksBetweenBurstShots>
 			<range>30</range>
 			<soundCast>Shot_AssaultRifle</soundCast>
 			<soundCastTail>GunTail_Medium</soundCastTail>
@@ -86,6 +84,204 @@
 					<linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
 				</li>
 			</tools>
+		</value>
+	</Operation>
+
+	<!-- ========== Mortar shells: make them valid CE shells ========== -->
+
+	<Operation Class="PatchOperationAttributeAdd">
+		<xpath>Defs/ThingDef[defName="RJW_Shell_Aphrodisiac" or defName="RJW_Shell_Cum" or defName="RJW_U_ShellDollification" or defName="RJW_U_ShellFuckmeatification" or defName="RJW_U_ShellFurryfication" or defName="RJW_U_ShellGayBomb"]</xpath>
+		<attribute>Class</attribute>
+		<value>CombatExtended.AmmoDef</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="RJW_Shell_Aphrodisiac" or defName="RJW_Shell_Cum" or defName="RJW_U_ShellDollification" or defName="RJW_U_ShellFuckmeatification" or defName="RJW_U_ShellFurryfication" or defName="RJW_U_ShellGayBomb"]</xpath>
+		<value>
+			<isMortarAmmo>true</isMortarAmmo>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="RJW_Bullet_Shell_Aphrodisiac" or defName="RJW_Bullet_Shell_Cum" or defName="RJW_U_BulletShellDollification" or defName="RJW_U_BulletShellFuckmeatification" or defName="RJW_U_BulletShellFurryfication" or defName="RJW_U_BulletShellGayBomb"]</xpath>
+		<value>
+			<thingClass>CombatExtended.ProjectileCE_Explosive</thingClass>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAttributeAdd">
+		<xpath>Defs/ThingDef[defName="RJW_Bullet_Shell_Aphrodisiac" or defName="RJW_Bullet_Shell_Cum" or defName="RJW_U_BulletShellDollification" or defName="RJW_U_BulletShellFuckmeatification" or defName="RJW_U_BulletShellFurryfication" or defName="RJW_U_BulletShellGayBomb"]/projectile</xpath>
+		<attribute>Class</attribute>
+		<value>CombatExtended.ProjectilePropertiesCE</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/CombatExtended.AmmoSetDef[defName="AmmoSet_81mmMortarShell"]/ammoTypes</xpath>
+		<value>
+			<RJW_Shell_Aphrodisiac>RJW_Bullet_Shell_Aphrodisiac</RJW_Shell_Aphrodisiac>
+			<RJW_Shell_Cum>RJW_Bullet_Shell_Cum</RJW_Shell_Cum>
+			<RJW_U_ShellDollification>RJW_U_BulletShellDollification</RJW_U_ShellDollification>
+			<RJW_U_ShellFuckmeatification>RJW_U_BulletShellFuckmeatification</RJW_U_ShellFuckmeatification>
+			<RJW_U_ShellFurryfication>RJW_U_BulletShellFurryfication</RJW_U_ShellFurryfication>
+			<RJW_U_ShellGayBomb>RJW_U_BulletShellGayBomb</RJW_U_ShellGayBomb>
+		</value>
+	</Operation>
+
+	<!-- ========== Xenogenetic warhead ========== -->
+
+	<Operation Class="PatchOperationAttributeAdd">
+		<xpath>Defs/ThingDef[defName="RJW_U_XenogeneticWarhead"]</xpath>
+		<attribute>Class</attribute>
+		<value>CombatExtended.AmmoDef</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="RJW_U_XenogeneticWarhead"]</xpath>
+		<value>
+			<isMortarAmmo>true</isMortarAmmo>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="RJW_U_Bullet_XenogeneticWarhead"]/thingClass</xpath>
+		<value>
+			<thingClass>RJW_Unleashed_Combat.CE.ProjectileCE_XenogeneticWarhead</thingClass>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAttributeAdd">
+		<xpath>Defs/ThingDef[defName="RJW_U_Bullet_XenogeneticWarhead"]/projectile</xpath>
+		<attribute>Class</attribute>
+		<value>CombatExtended.ProjectilePropertiesCE</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/CombatExtended.AmmoSetDef[defName="AmmoSet_81mmMortarShell"]/ammoTypes</xpath>
+		<value>
+			<RJW_U_XenogeneticWarhead>RJW_U_Bullet_XenogeneticWarhead</RJW_U_XenogeneticWarhead>
+		</value>
+	</Operation>
+
+	<!-- ========== Common CE ammo fields for all converted shells ========== -->
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="RJW_Bullet_Shell_Aphrodisiac" or defName="RJW_Bullet_Shell_Cum" or defName="RJW_U_BulletShellDollification" or defName="RJW_U_BulletShellFuckmeatification" or defName="RJW_U_BulletShellFurryfication" or defName="RJW_U_BulletShellGayBomb" or defName="RJW_U_Bullet_XenogeneticWarhead"]/projectile</xpath>
+		<value>
+			<damageAmountBase>1</damageAmountBase>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="RJW_Bullet_Shell_Aphrodisiac" or defName="RJW_Bullet_Shell_Cum" or defName="RJW_U_BulletShellDollification" or defName="RJW_U_BulletShellFuckmeatification" or defName="RJW_U_BulletShellFurryfication" or defName="RJW_U_BulletShellGayBomb"]/projectile</xpath>
+		<value>
+			<speed>0</speed>
+			<gravityFactor>5</gravityFactor>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="RJW_U_Bullet_XenogeneticWarhead"]/projectile/speed</xpath>
+		<value>
+			<speed>0</speed>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="RJW_U_Bullet_XenogeneticWarhead"]/projectile</xpath>
+		<value>
+			<gravityFactor>5</gravityFactor>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="RJW_Shell_Aphrodisiac"]</xpath>
+		<value>
+			<ammoClass>RJW_U_AmmoCat_Aphrodisiac</ammoClass>
+			<cookOffProjectile>RJW_Bullet_Shell_Aphrodisiac</cookOffProjectile>
+			<detonateProjectile>RJW_Bullet_Shell_Aphrodisiac</detonateProjectile>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="RJW_Shell_Cum"]</xpath>
+		<value>
+			<ammoClass>RJW_U_AmmoCat_Cum</ammoClass>
+			<cookOffProjectile>RJW_Bullet_Shell_Cum</cookOffProjectile>
+			<detonateProjectile>RJW_Bullet_Shell_Cum</detonateProjectile>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="RJW_U_ShellDollification"]</xpath>
+		<value>
+			<ammoClass>RJW_U_AmmoCat_Dollification</ammoClass>
+			<cookOffProjectile>RJW_U_BulletShellDollification</cookOffProjectile>
+			<detonateProjectile>RJW_U_BulletShellDollification</detonateProjectile>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="RJW_U_ShellFuckmeatification"]</xpath>
+		<value>
+			<ammoClass>RJW_U_AmmoCat_Fuckmeatification</ammoClass>
+			<cookOffProjectile>RJW_U_BulletShellFuckmeatification</cookOffProjectile>
+			<detonateProjectile>RJW_U_BulletShellFuckmeatification</detonateProjectile>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="RJW_U_ShellFurryfication"]</xpath>
+		<value>
+			<ammoClass>RJW_U_AmmoCat_Furryfication</ammoClass>
+			<cookOffProjectile>RJW_U_BulletShellFurryfication</cookOffProjectile>
+			<detonateProjectile>RJW_U_BulletShellFurryfication</detonateProjectile>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="RJW_U_ShellGayBomb"]</xpath>
+		<value>
+			<ammoClass>RJW_U_AmmoCat_GayBomb</ammoClass>
+			<cookOffProjectile>RJW_U_BulletShellGayBomb</cookOffProjectile>
+			<detonateProjectile>RJW_U_BulletShellGayBomb</detonateProjectile>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="RJW_U_XenogeneticWarhead"]</xpath>
+		<value>
+			<ammoClass>RJW_U_AmmoCat_XenogeneticWarhead</ammoClass>
+			<cookOffProjectile>RJW_U_Bullet_XenogeneticWarhead</cookOffProjectile>
+			<detonateProjectile>RJW_U_Bullet_XenogeneticWarhead</detonateProjectile>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="RJW_Shell_Aphrodisiac" or defName="RJW_Shell_Cum" or defName="RJW_U_ShellDollification" or defName="RJW_U_ShellFuckmeatification" or defName="RJW_U_ShellFurryfication" or defName="RJW_U_ShellGayBomb"]</xpath>
+		<value>
+			<thingClass>CombatExtended.AmmoThing</thingClass>
+			<alwaysHaulable>true</alwaysHaulable>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="RJW_U_XenogeneticWarhead"]/thingClass</xpath>
+		<value>
+			<thingClass>CombatExtended.AmmoThing</thingClass>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="RJW_U_XenogeneticWarhead"]</xpath>
+		<value>
+			<alwaysHaulable>true</alwaysHaulable>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="RJW_Shell_Aphrodisiac" or defName="RJW_Shell_Cum" or defName="RJW_U_ShellDollification" or defName="RJW_U_ShellFuckmeatification" or defName="RJW_U_ShellFurryfication" or defName="RJW_U_ShellGayBomb" or defName="RJW_U_XenogeneticWarhead"]/comps</xpath>
+		<value>
+			<li Class="CompProperties_Forbiddable"/>
 		</value>
 	</Operation>
 

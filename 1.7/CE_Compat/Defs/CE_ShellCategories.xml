@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- Ammo categories so the CE reload/switch gizmo can label and separate our mortar shells. -->
+
+	<CombatExtended.AmmoCategoryDef>
+		<defName>RJW_U_AmmoCat_Aphrodisiac</defName>
+		<label>aphrodisiac shell</label>
+		<labelShort>aphro</labelShort>
+		<description>Bursts into an aphrodisiac cloud that drives nearby humanlikes into heat.</description>
+	</CombatExtended.AmmoCategoryDef>
+
+	<CombatExtended.AmmoCategoryDef>
+		<defName>RJW_U_AmmoCat_Cum</defName>
+		<label>cum shell</label>
+		<labelShort>cum</labelShort>
+		<description>Bursts into a load of thick cum, drenching everything in the blast radius.</description>
+	</CombatExtended.AmmoCategoryDef>
+
+	<CombatExtended.AmmoCategoryDef>
+		<defName>RJW_U_AmmoCat_Dollification</defName>
+		<label>dollification shell</label>
+		<labelShort>doll</labelShort>
+		<description>Bursts on impact and spreads dollification genes to everything caught in the blast.</description>
+	</CombatExtended.AmmoCategoryDef>
+
+	<CombatExtended.AmmoCategoryDef>
+		<defName>RJW_U_AmmoCat_Fuckmeatification</defName>
+		<label>fuckmeatification shell</label>
+		<labelShort>fuckmeat</labelShort>
+		<description>Bursts on impact and spreads fuckmeatification genes to everything caught in the blast.</description>
+	</CombatExtended.AmmoCategoryDef>
+
+	<CombatExtended.AmmoCategoryDef>
+		<defName>RJW_U_AmmoCat_Furryfication</defName>
+		<label>furryfication shell</label>
+		<labelShort>fur</labelShort>
+		<description>Bursts on impact and spreads furryfication genes to everything caught in the blast.</description>
+	</CombatExtended.AmmoCategoryDef>
+
+	<CombatExtended.AmmoCategoryDef>
+		<defName>RJW_U_AmmoCat_GayBomb</defName>
+		<label>gay bomb shell</label>
+		<labelShort>gay bomb</labelShort>
+		<description>Bursts on impact and spreads homosexuality genes to everything caught in the blast.</description>
+	</CombatExtended.AmmoCategoryDef>
+
+	<CombatExtended.AmmoCategoryDef>
+		<defName>RJW_U_AmmoCat_XenogeneticWarhead</defName>
+		<label>xenogenetic shell</label>
+		<labelShort>xeno</labelShort>
+		<description>Bursts on impact and injects the warhead's xenogenetic compound into everything caught in the blast.</description>
+	</CombatExtended.AmmoCategoryDef>
+
+</Defs>

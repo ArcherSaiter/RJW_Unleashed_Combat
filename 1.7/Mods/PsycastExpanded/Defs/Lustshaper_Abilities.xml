@@ -15,9 +15,9 @@
       <canTargetPawns>true</canTargetPawns>
       <canTargetBuildings>false</canTargetBuildings>
     </targetingParameters>
-    <power>0.05</power>
+    <power>0.1</power>
     <powerStatFactors>
-      <PsychicSensitivity>0.5</PsychicSensitivity>
+      <PsychicSensitivity>0.75</PsychicSensitivity>
     </powerStatFactors>
     <modExtensions>
       <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
@@ -53,7 +53,7 @@
       <canTargetBuildings>false</canTargetBuildings>
     </targetingParameters>
 	<powerStatFactors>
-      <PsychicSensitivity>0.5</PsychicSensitivity>
+      <PsychicSensitivity>0.75</PsychicSensitivity>
     </powerStatFactors>
     <modExtensions>
       <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
@@ -85,9 +85,9 @@
       <canTargetBuildings>false</canTargetBuildings>
       <canTargetSelf>true</canTargetSelf>
     </targetingParameters>
-    <durationTime>600</durationTime>
+    <durationTime>60000</durationTime>
 	<durationTimeStatFactors>
-      <PsychicSensitivity>0.5</PsychicSensitivity>
+      <PsychicSensitivity>0.75</PsychicSensitivity>
     </durationTimeStatFactors>
     <showUndrafted>true</showUndrafted>
     <modExtensions>
@@ -117,7 +117,7 @@
     <abilityClass>RJW_Unleashed_VPE.Ability_LustRay</abilityClass>
     <durationTime>240</durationTime>
     <durationTimeStatFactors>
-      <PsychicSensitivity>0.5</PsychicSensitivity>
+      <PsychicSensitivity>0.75</PsychicSensitivity>
     </durationTimeStatFactors>
     <castTime>30</castTime>
     <range>12.9</range>
@@ -129,7 +129,7 @@
       <canTargetBuildings>false</canTargetBuildings>
     </targetingParameters>
     <powerStatFactors>
-      <PsychicSensitivity>0.5</PsychicSensitivity>
+      <PsychicSensitivity>0.75</PsychicSensitivity>
     </powerStatFactors>
 	<power>0.20</power>
     <modExtensions>
@@ -169,7 +169,7 @@
     </targetingParameters>
     <durationTime>60000</durationTime>
 	<powerStatFactors>
-      <PsychicSensitivity>0.5</PsychicSensitivity>
+      <PsychicSensitivity>0.75</PsychicSensitivity>
     </powerStatFactors>
 	<durationTimeStatFactors>
       <PsychicSensitivity>0.25</PsychicSensitivity>
@@ -209,10 +209,10 @@
     <radius>8.9</radius>
     <power>0.35</power>
     <powerStatFactors>
-      <PsychicSensitivity>0.5</PsychicSensitivity>
+      <PsychicSensitivity>0.75</PsychicSensitivity>
     </powerStatFactors>
 	<radiusStatFactors>
-      <PsychicSensitivity>0.5</PsychicSensitivity>
+      <PsychicSensitivity>0.75</PsychicSensitivity>
     </radiusStatFactors>
     <modExtensions>
       <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
@@ -246,10 +246,10 @@
     <radius>4.9</radius>
     <power>0.35</power>
     <powerStatFactors>
-      <PsychicSensitivity>0.5</PsychicSensitivity>
+      <PsychicSensitivity>0.75</PsychicSensitivity>
     </powerStatFactors>
     <!--<radiusStatFactors>
-      <PsychicSensitivity>0.5</PsychicSensitivity>
+      <PsychicSensitivity>0.75</PsychicSensitivity>
     </radiusStatFactors>-->
     <modExtensions>
       <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
@@ -282,12 +282,12 @@
     </targetingParameters>
     <radius>4.9</radius>
     <power>0.10</power>
-    <durationTime>1800</durationTime>
+    <durationTime>60000</durationTime>
     <durationTimeStatFactors>
-      <PsychicSensitivity>0.5</PsychicSensitivity>
+      <PsychicSensitivity>0.75</PsychicSensitivity>
     </durationTimeStatFactors>
     <powerStatFactors>
-      <PsychicSensitivity>0.5</PsychicSensitivity>
+      <PsychicSensitivity>0.75</PsychicSensitivity>
     </powerStatFactors>
     <modExtensions>
       <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
@@ -323,15 +323,15 @@
     </targetingParameters>
     <radius>15</radius>
     <power>0.10</power>
-    <durationTime>1250</durationTime>
+    <durationTime>15000</durationTime>
     <powerStatFactors>
-      <PsychicSensitivity>0.5</PsychicSensitivity>
+      <PsychicSensitivity>0.75</PsychicSensitivity>
     </powerStatFactors>
 	<durationTimeStatFactors>
-      <PsychicSensitivity>0.5</PsychicSensitivity>
+      <PsychicSensitivity>0.75</PsychicSensitivity>
     </durationTimeStatFactors>
 	<radiusStatFactors>
-      <PsychicSensitivity>0.5</PsychicSensitivity>
+      <PsychicSensitivity>0.75</PsychicSensitivity>
     </radiusStatFactors>
     <showUndrafted>false</showUndrafted>
     <modExtensions>

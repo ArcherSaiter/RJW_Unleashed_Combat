@@ -9,7 +9,7 @@
     <abilityClass>RJW_Unleashed_VPE.Ability_CumShower</abilityClass>
     <castTime>30</castTime>
     <range>14.9</range>
-    <radius>3.9</radius>
+    <radius>4.9</radius>
     <targetMode>Location</targetMode>
     <castSound>VPE_IceShield_Cast</castSound>
     <targetingParameters>
@@ -43,7 +43,7 @@
     <abilityClass>RJW_Unleashed_VPE.Ability_CumCatalyst</abilityClass>
     <castTime>60</castTime>
     <range>12.9</range>
-    <radius>2.9</radius>
+    <radius>4.9</radius>
     <targetMode>Location</targetMode>
     <castSound>VPE_IceShield_Cast</castSound>
     <targetingParameters>
@@ -82,7 +82,7 @@
     <targetingParameters>
       <canTargetSelf>true</canTargetSelf>
     </targetingParameters>
-    <durationTime>5000</durationTime>
+    <durationTime>15000</durationTime>
     <durationTimeStatFactors>
       <PsychicSensitivity>0.5</PsychicSensitivity>
     </durationTimeStatFactors>

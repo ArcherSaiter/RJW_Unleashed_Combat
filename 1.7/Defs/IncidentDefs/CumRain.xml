@@ -14,7 +14,7 @@
     <letterDef>NeutralEvent</letterDef>
     <baseChance>0.3</baseChance>
     <minRefireDays>14</minRefireDays>
-    <durationDays>0.5~2.0</durationDays>
+    <durationDays>2~5</durationDays>
   </IncidentDef>
 
 </Defs>

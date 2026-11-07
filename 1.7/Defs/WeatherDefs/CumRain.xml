@@ -14,7 +14,7 @@
     <weatherThought>SoakingWet</weatherThought>
     <rainRate>1</rainRate>
     <moveSpeedMultiplier>0.9</moveSpeedMultiplier>
-    <durationRange>3000~5000</durationRange>
+    <durationRange>120000~300000</durationRange>
     <ambientSounds>
       <li>Ambient_Rain</li>
     </ambientSounds>
@@ -23,7 +23,7 @@
     </overlayClasses>
     <eventMakers>
       <li>
-        <averageInterval>700</averageInterval>
+        <averageInterval>600</averageInterval>
         <eventClass>RJW_Unleashed_Combat.WeatherEvent_CumFall</eventClass>
       </li>
     </eventMakers>

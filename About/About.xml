@@ -57,6 +57,7 @@
 		<li>CETeam.CombatExtended</li>
     </loadAfter>
     <description>
-		
+		:warning: If you have `Filth vanishes with rain and time` or `Tweaks Galore` which has such option in `Core `section, it applies a late patch which causes add-remove filth cycle that reduces performance significantly.
+With this specific option/patch disabled, tick rate impact from cum rain is non-existent even with fully covered map and 800 mods, based on my testing.
 	</description>
 </ModMetaData>
